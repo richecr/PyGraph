@@ -1,2 +1,2 @@
 # PyGraph
-Biblioteca com intuito implementar os conceitos de Teoria dos Grafos.
+> Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
