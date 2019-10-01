@@ -1,4 +1,4 @@
-from graph.SimpleGraph import SimpleGraph
+from py_graph_t.SimpleGraph import SimpleGraph
 
 g = SimpleGraph()
 

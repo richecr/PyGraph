@@ -1,5 +1,5 @@
-from graph.vertex.SimpleVertex import SimpleVertex
-from graph.edges.SimpleEdge import SimpleEdge
+from py_graph_t.vertex.SimpleVertex import SimpleVertex
+from py_graph_t.edges.SimpleEdge import SimpleEdge
 
 class SimpleGraph():
     """implementation of a simple graph."""
