@@ -1,20 +1,26 @@
-from graph.nodes.SimpleNode import SimpleNode
+from graph.vertex.SimpleVertex import SimpleVertex
 from graph.edges.SimpleEdge import SimpleEdge
 
 class SimpleGraph():
     """implementation of a simple graph."""
-    nodes = []
+    vertices = []
     edges = []
 
     def __init__(self):
         pass
 
-    def add_node(self, value):
-        self.nodes.append(SimpleNode(value))
+    def add_vertex(self, value):
+        self.vertices.append(SimpleVertex(value))
 
-    def add_edge(self, node_a, node_b):
-        self.edges.append(SimpleEdge("teste", node_a, node_b))
-    
+    def add_edge(self, vertex_a, vertex_b):
+        self.edges.append(SimpleEdge("teste", vertex_a, vertex_b))
+
+    def num_vertex(self):
+        return len(self.vertices)
+
+    def num_edges(self):
+        return len(self.edges)
+
     def __str__(self):
         graph_string = ""
         for edge in self.edges:

@@ -1,4 +1,4 @@
-class SimpleNode():
+class SimpleVertex():
     value = None
 
     def __init__(self, value):
