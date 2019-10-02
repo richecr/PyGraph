@@ -107,3 +107,14 @@ class SimpleGraph():
             return True
         else:
             return False	
+
+    def get_all_vertex(self):
+        """
+        Método que retorna uma lista com os vértices do grafo.
+
+        Retorno:
+        ----------
+        vertices: SimpleVertex[]
+            - Lista com todos os vértices do grafo.
+        """
+        return self.vertices
