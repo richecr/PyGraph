@@ -35,7 +35,7 @@ class SimpleGraph():
         """
         self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
 
-    def delete_edge(self,edge):
+    def delete_edge(self, vertex_a, vertex_b):
         """
         Método que remove uma aresta ao grafo.
 
@@ -44,7 +44,11 @@ class SimpleGraph():
         edge: SimpleEdge
             - Aresta a ser removida.
         """
-        self.edges.remove(edge)
+        edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
+        if (self.edges.__contains__(edge_aux)):
+            self.edges.remove(edge_aux)
+        else:
+            return
                                                                
     def num_vertex(self):
         """
