@@ -110,7 +110,7 @@ class SimpleGraph():
 
     def list_graph_vertices(self):
         """
-        Método que retona lista com todos os vértices do grafo.
+        Método que retorna lista com todos os vértices do grafo.
         """
         vertices = []
         for vertex in self.vertices:
@@ -119,7 +119,7 @@ class SimpleGraph():
 
     def list_graph_edges(self):
         """
-        Método que retona lista com todos as arestas do grafo.
+        Método que retorna lista com todos as arestas do grafo.
         """
         edges = []
         for edge in self.edges:
