@@ -90,3 +90,20 @@ class SimpleGraph():
                 neigh_vertices.append(edge.vertex_a)
 
         return neigh_vertices
+    
+    def vertices_adjacency(self, value_a, value_b):
+        """
+        Método booleano que indica se os vértices de entrada são adjacentes.
+
+        Parâmetros:
+        ----------
+        vertex_a: *
+            - Tipo dos vértice.
+        vertex_b: *
+            - Tipo dos vértice.
+        """
+        neigh_vertices = self.vertex_neighbors(value_a)
+        if value_b in neigh_vertices:
+            return True
+        else:
+            return False	

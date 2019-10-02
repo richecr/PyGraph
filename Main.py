@@ -16,3 +16,4 @@ print(g.num_vertex())
 print(g.num_edges())
 
 print(g.vertex_neighbors(1))
+print(g.vertices_adjacency(1, "b"))
