@@ -114,6 +114,29 @@ class SimpleGraph():
                 neigh_vertices.append(edge.vertex_a)
 
         return neigh_vertices
+
+    def vertex_degree(self, value):
+        """
+        Método que retorna o grau do vértice de entrada.
+
+        Parâmetros:
+        ----------
+        value: *
+            - Tipo do vértice de entrada.
+
+        Retorno:
+        ----------
+        Quantidade: Int
+            - Quantidade de vizinhos do vértice de entrada.
+        """
+
+        retorno = -1
+
+        if(self.vertex_exists(value)):
+            retorno = len(self.vertex_neighbors(value))
+        else:
+            retorno = -1
+        return retorno
     
     def vertices_adjacency(self, value_a, value_b):
         """
