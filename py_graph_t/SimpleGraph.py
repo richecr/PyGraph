@@ -2,7 +2,7 @@ from py_graph_t.vertex.SimpleVertex import SimpleVertex
 from py_graph_t.edges.SimpleEdge import SimpleEdge
 
 class SimpleGraph():
-    """implementation of a simple graph."""
+    """Implementação de um simples grafo."""
     vertices = []
     edges = []
 
@@ -56,22 +56,6 @@ class SimpleGraph():
             - Quantidade de número de arestas.
         """
         return len(self.edges)
-
-    def __str__(self):
-        """
-        Método que retorna a representação textual do grafo.
-
-        Retorno:
-        ----------
-        graph_string: String
-            - Representação textual do grafo.
-        """
-        graph_string = ""
-        for edge in self.edges:
-            graph_string += edge.__str__()
-            graph_string += "\n"
-        
-        return graph_string
 
     def vertex_neighbors(self, value):
         """
@@ -136,3 +120,19 @@ class SimpleGraph():
         for edge in self.edges:
             edges.append(edge.name)
         return edges
+
+    def __str__(self):
+        """
+        Método que retorna a representação textual do grafo.
+
+        Retorno:
+        ----------
+        graph_string: String
+            - Representação textual do grafo.
+        """
+        graph_string = ""
+        for edge in self.edges:
+            graph_string += edge.__str__()
+            graph_string += "\n"
+        
+        return graph_string

@@ -1,5 +1,5 @@
 class SimpleVertex():
-    """implementation of a simple vertex."""
+    """Implementação de um simples vértice."""
     value = None
 
 
@@ -24,3 +24,9 @@ class SimpleVertex():
             - Valor a ser alterado no vértice.
         """
         self.value = new_value
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.__dict__ == other.__dict__
+        else:
+            return False
