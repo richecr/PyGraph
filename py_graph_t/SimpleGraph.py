@@ -35,6 +35,17 @@ class SimpleGraph():
         """
         self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
 
+    def delete_edge(self,edge):
+        """
+        Método que remove uma aresta ao grafo.
+
+        Parâmetros:
+        ----------
+        edge: SimpleEdge
+            - Aresta a ser removida.
+        """
+        self.edges.remove(edge)
+                                                               
     def num_vertex(self):
         """
         Método que retorna o número de vértices no grafo.
