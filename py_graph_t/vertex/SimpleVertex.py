@@ -16,7 +16,7 @@ class SimpleVertex():
 
     def set_value(self, new_value):
         """
-        Método que altera o valor da aresta.
+        Método que altera o valor do vértice.
 
         Parâmetros:
         ----------
