@@ -18,6 +18,15 @@ print(g.num_edges())
 print(g.vertex_exists(SimpleVertex("c")))
 print(g.vertex_exists(SimpleVertex(2)))
 
+g.delete_vertex(SimpleVertex(1))
+print(g.__str__())
+print(g.num_vertex())
+print(g.num_edges())
+
+g.delete_vertex(SimpleVertex(5))
+print(g.__str__())
+print(g.num_vertex())
+print(g.num_edges())
 '''
 print(g.vertex_neighbors(1))
 print(g.vertices_adjacency(1, "b"))
