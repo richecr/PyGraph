@@ -106,4 +106,22 @@ class SimpleGraph():
         if value_b in neigh_vertices:
             return True
         else:
-            return False	
+            return False
+
+    def list_graph_vertices(self):
+        """
+        Método que retona lista com todos os vértices do grafo.
+        """
+        vertices = []
+        for vertex in self.vertices:
+            vertices.append(vertex.value)
+        return vertices
+
+    def list_graph_edges(self):
+        """
+        Método que retona lista com todos as arestas do grafo.
+        """
+        edges = []
+        for edge in self.edges:
+            edges.append(edge.name)
+        return edges
