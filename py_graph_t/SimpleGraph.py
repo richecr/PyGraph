@@ -98,9 +98,9 @@ class SimpleGraph():
         Parâmetros:
         ----------
         vertex_a: *
-            - Tipo dos vértice.
+            - Tipo dos vértices.
         vertex_b: *
-            - Tipo dos vértice.
+            - Tipo dos vértices.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
         if value_b in neigh_vertices:
@@ -108,9 +108,20 @@ class SimpleGraph():
         else:
             return False
 
+    def get_all_vertex(self):
+        """
+        Método que retorna uma lista com os vértices do grafo.
+
+        Retorno:
+        ----------
+        vertices: List
+            - Lista com todos os vértices do grafo.
+        """
+        return self.vertices
+
     def list_graph_vertices(self):
         """
-        Método que retorna lista com todos os vértices do grafo.
+        Método que retorna lista com todos os valores dos vértices do grafo.
         """
         vertices = []
         for vertex in self.vertices:
@@ -119,9 +130,10 @@ class SimpleGraph():
 
     def list_graph_edges(self):
         """
-        Método que retorna lista com todos as arestas do grafo.
+        Método que retorna lista com todos os nomes as arestas do grafo.
         """
         edges = []
         for edge in self.edges:
             edges.append(edge.name)
         return edges
+            return False	
