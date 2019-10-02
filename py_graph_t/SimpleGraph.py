@@ -98,12 +98,23 @@ class SimpleGraph():
         Parâmetros:
         ----------
         vertex_a: *
-            - Tipo dos vértice.
+            - Tipo dos vértices.
         vertex_b: *
-            - Tipo dos vértice.
+            - Tipo dos vértices.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
         if value_b in neigh_vertices:
             return True
         else:
             return False	
+
+    def get_all_vertex(self):
+        """
+        Método que retorna uma lista com os vértices do grafo.
+
+        Retorno:
+        ----------
+        vertices: List
+            - Lista com todos os vértices do grafo.
+        """
+        return self.vertices
