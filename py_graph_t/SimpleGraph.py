@@ -72,3 +72,38 @@ class SimpleGraph():
             graph_string += "\n"
         
         return graph_string
+
+    def vertex_neighbors(self, value):
+        """
+        Método que retorna uma lista com os vértices vizinhos do vértice de entrada.
+
+        Parâmetros:
+        ----------
+        value: *
+            - Tipo do vértice de entrada.
+        """
+        neigh_vertices = []
+        for edge in self.edges:
+            if edge.vertex_a == value:
+                neigh_vertices.append(edge.vertex_b)
+            elif edge.vertex_b == value:
+                neigh_vertices.append(edge.vertex_a)
+
+        return neigh_vertices
+    
+    def vertices_adjacency(self, value_a, value_b):
+        """
+        Método booleano que indica se os vértices de entrada são adjacentes.
+
+        Parâmetros:
+        ----------
+        vertex_a: *
+            - Tipo dos vértice.
+        vertex_b: *
+            - Tipo dos vértice.
+        """
+        neigh_vertices = self.vertex_neighbors(value_a)
+        if value_b in neigh_vertices:
+            return True
+        else:
+            return False	
