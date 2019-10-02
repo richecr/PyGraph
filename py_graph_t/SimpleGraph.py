@@ -136,4 +136,3 @@ class SimpleGraph():
         for edge in self.edges:
             edges.append(edge.name)
         return edges
-            return False	

@@ -21,11 +21,7 @@ Na página do [projeto](https://github.com/Rickecr/PyGraph), você pode clicar n
 - Selecione labels para sua issue.
 - Por fim, clique em `Submit new issue`.
 
-## Contribuir com implementação
-
-Em Construção.
-
-### Clonar o repositório
+## Clonar o repositório
 
 Na página inicial do [repositório](https://github.com/Rickecr/PyGraph) tem um botão `Fork`. Ao clicar é só esperar concluir o fork. E então ele irá criar o repositório na sua conta. E agora é só clonar em sua máquina, assim:
 
@@ -56,6 +52,18 @@ git push origin master
 Mas isso só irá alterar no seu fork, o repositório oficial não vai ter suas alterações e agora ? :confused:
 
 Calma, agora que entra o `Pull Request` ou `PR`
+
+## Contribuir com implementação:
+
+Depois de ter realizado o fork e o clone do projeto, escolhido seu editor de texto favorito, nós amamos o VSCode, mas fique a vontade para escolher o seu.
+
+### Entendendo as pastas:
+
+O projeto se encontra na pasta `py_graph_t`, estamos aceitando dicas de nomes para biblioteca também :blush: .
+
+- Na pasta `edges` : Encontra-se todos os arquivos sobre arestas de um grafo, todas as implementações de uma aresta irão estar nessa pasta. Por exemplo, quando existir um grafo com arestas que possuem pesos, essa aresta será criada dentro dessa pasta, herdando da classe base de aresta(`SimpleEdge`).
+
+- Na pasta `vertex` : Encontra-se todos os arquivos sobre vértices de um grafo, todas as implementações de um vértice irão estar nessa pasta. Por exemplo, quando existir um grafo com vértices que possuem um dado a ser salvo, esse vértice será criado dentro dessa pasta, herdando da classe base de vértice(`SimpleVertex`).
 
 ### Fazendo uma Pull Request
 
