@@ -72,3 +72,21 @@ class SimpleGraph():
             graph_string += "\n"
         
         return graph_string
+
+    def vertex_neighbors(self, value):
+        """
+        Método que retorna uma lista com os vértices vizinhos do vértice de entrada.
+
+        Parâmetros:
+        ----------
+        value: *
+            - Tipo do vértice de entrada.
+        """
+        neigh_vertices = []
+        for edge in self.edges:
+            if edge.vertex_a == value:
+                neigh_vertices.append(edge.vertex_b)
+            elif edge.vertex_b == value:
+                neigh_vertices.append(edge.vertex_a)
+
+        return neigh_vertices

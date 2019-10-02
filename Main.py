@@ -14,3 +14,5 @@ g.add_edge(name="terceira_aresta", vertex_a=1, vertex_b="d")
 print(g.__str__())
 print(g.num_vertex())
 print(g.num_edges())
+
+print(g.vertex_neighbors(1))
