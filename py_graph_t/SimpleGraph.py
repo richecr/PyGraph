@@ -61,6 +61,31 @@ class SimpleGraph():
         """
         return len(self.vertices)
 
+    def vertex_exists(self,vertex):
+        """
+        Método booleano que indica se um determinado vértice pertence ao Grafo.
+
+        Parâmetros:
+        ----------
+        vertex: SimpleVertex
+            - vértice a ser verificado
+           
+        """
+        return self.vertices.__contains__(vertex)
+
+    def edge_exists(self,edge):
+        """
+        Método booleano que indica se um determinada aresta pertence ao Grafo.
+
+        Parâmetros:
+        ----------
+        edge: SimpleEdge
+            - aresta a ser verificada
+           
+        """
+        return self.edges.__contains__(edge)
+
+
     def num_edges(self):
         """
         Método que retorna o número de arestas no grafo.

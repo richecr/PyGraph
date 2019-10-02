@@ -1,4 +1,5 @@
 from py_graph_t.SimpleGraph import SimpleGraph
+from py_graph_t.vertex.SimpleVertex import SimpleVertex
 
 g = SimpleGraph()
 
@@ -14,6 +15,8 @@ g.add_edge(name="terceira_aresta", vertex_a=1, vertex_b="d")
 print(g.__str__())
 print(g.num_vertex())
 print(g.num_edges())
+print(g.vertex_exists(SimpleVertex("c")))
+print(g.vertex_exists(SimpleVertex(2)))
 
 '''
 print(g.vertex_neighbors(1))
