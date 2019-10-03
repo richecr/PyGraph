@@ -5,6 +5,7 @@ class SimpleEdge(object):
     name = None
 
     def __init__(self, name=None, vertex_a=None, vertex_b=None):
+        """ Inicialização dos atributos da classe SimpleEdge."""
         if (name == None):
             name = vertex_a.__str__() + vertex_b.__str__()
         self.name = name
