@@ -55,7 +55,9 @@ Calma, agora que entra o `Pull Request` ou `PR`
 
 ## Contribuir com implementação:
 
-Depois de ter realizado o fork e o clone do projeto, escolhido seu editor de texto favorito, nós amamos o VSCode, mas fique a vontade para escolher o seu.
+Depois de ter realizado o fork e o clone do projeto, escolhido seu editor de texto favorito, nós amamos o VSCode, mas fique a vontade para escolher o seu. Então é hora da codificação.
+
+Mas calma ai, antes de qualquer coisa, você deve escolher uma issue que pretender trabalhar. Se a issue que trata sobre a funcionalidade não existir, você deve criar e dizer que esta trabalhando nela, caso ela exista você deve dizer lá(caso não já tenha alguém) que pretende trabalhar na issue. E após feito isso, agora sim você está pronto para codificação.
 
 ### Entendendo as pastas:
 
@@ -65,7 +67,7 @@ O projeto se encontra na pasta `py_graph_t`, estamos aceitando dicas de nomes pa
 
 - Na pasta `vertex` : Encontra-se todos os arquivos sobre vértices de um grafo, todas as implementações de um vértice irão estar nessa pasta. Por exemplo, quando existir um grafo com vértices que possuem um dado a ser salvo, esse vértice será criado dentro dessa pasta, herdando da classe base de vértice(`SimpleVertex`).
 
-### Fazendo uma Pull Request
+### Realizando uma Pull Request - PR
 
 Na página do seu fork irá aparecer uma mensagem em amarelo solicitando que você faça uma Pull Request para o repositório original. Ao clicar irá abrir uma página para você preencher as informações sobre sua PR.
 
@@ -74,6 +76,3 @@ Na página do seu fork irá aparecer uma mensagem em amarelo solicitando que voc
 - Descreva suas modificações
 
 - Espere pela avaliação da sua PR, e pode ocorrer de pedimos algumas alterações a seres feitas
-
-
-
