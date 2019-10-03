@@ -4,6 +4,6 @@ class VertexNotExistsException(Exception):
         return "Vértice não existe"
 
 
-class VertexDuplicatedException(Exception):
+class EdgeDuplicatedException(Exception):
     def __str__(self):
-        return "Vértice Duplicado"
+        return "Aresta Duplicada"

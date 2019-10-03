@@ -1,7 +1,7 @@
 from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 
-from .exceptions.SimpleGraphException import VertexNotExistsException, VertexDuplicatedException
+from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException
 
 class SimpleGraph():
     """Implementação de um simples grafo."""
@@ -67,7 +67,7 @@ class SimpleGraph():
         if (vertex_a == None or vertex_b == None):
             raise VertexNotExistsException()
         if SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b) in self.edges:
-            raise VertexDuplicatedException()
+            raise EdgeDuplicatedException()
         else:
             self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
 
