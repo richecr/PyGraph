@@ -1,5 +1,7 @@
-from py_graph_t.vertex.SimpleVertex import SimpleVertex
-from py_graph_t.edges.SimpleEdge import SimpleEdge
+from .vertex.SimpleVertex import SimpleVertex
+from .edges.SimpleEdge import SimpleEdge
+
+from .exceptions.SimpleGraphException import VertexNotExistsException
 
 class SimpleGraph():
     """Implementação de um simples grafo."""
@@ -123,7 +125,6 @@ class SimpleGraph():
         """
         return self.edges.__contains__(edge)
 
-
     def num_edges(self):
         """
         Método que retorna o número de arestas no grafo.
@@ -152,6 +153,25 @@ class SimpleGraph():
                 neigh_vertices.append(edge.vertex_a)
 
         return neigh_vertices
+
+    def vertex_degree(self, value):
+        """
+        Método que retorna o grau do vértice de entrada.
+
+        Parâmetros:
+        ----------
+        value: *
+            - Tipo do vértice de entrada.
+
+        Retorno:
+        ----------
+        Quantidade: Int
+            - Quantidade de vizinhos do vértice de entrada.
+        """
+        if(self.vertex_exists(value)):
+            return len(self.vertex_neighbors(value))
+        else:
+            raise VertexNotExistsException()
     
     def vertices_adjacency(self, value_a, value_b):
         """
@@ -198,6 +218,17 @@ class SimpleGraph():
         for edge in self.edges:
             edges.append(edge.name)
         return edges
+    
+    def show_edge(self, vertex_a, vertex_b):
+        """
+        Método que retorna uma aresta entre dois vértices, se ela existe.
+        """
+        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
+        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
+
+        for edge in self.edges:
+            if edge == edge_a or edge == edge_b:
+                return edge
 
     def __str__(self):
         """
