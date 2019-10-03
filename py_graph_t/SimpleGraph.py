@@ -198,6 +198,18 @@ class SimpleGraph():
         for edge in self.edges:
             edges.append(edge.name)
         return edges
+    
+    def show_edge(self, vertex_a, vertex_b):
+        """
+        Método que retorna uma aresta entre dois vértices, se ela existe.
+        """
+        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
+        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
+
+        for edge in self.edges:
+            if edge == edge_a or edge == edge_b:
+                return edge
+                
 
     def __str__(self):
         """
