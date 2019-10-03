@@ -66,11 +66,8 @@ class SimpleGraph():
 
         if (vertex_a == None or vertex_b == None):
             raise VertexNotExistsException()
-        
         else:
             self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
-
-            
 
     def delete_edge(self, value_a, value_b):
         """
@@ -83,7 +80,6 @@ class SimpleGraph():
         value_b: *.
             - Identificador do vértice cauda da aresta.
         """
-
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
@@ -134,17 +130,29 @@ class SimpleGraph():
         """
         return self.vertices.__contains__(value)
 
-    def edge_exists(self,edge):
+    def edge_exists(self, value_a, value_b):
         """
         Método booleano que indica se um determinada aresta pertence ao Grafo.
 
         Parâmetros:
         ----------
-        edge: SimpleEdge
-            - aresta a ser verificada
-           
+        value_a: 
+            - Identificador do vértice cabeça da aresta.
+        value_b: 
+            - Identificador do vértice cauda da aresta.
+        
+        Retorno:
+        ----------
+        True, caso a aresta exista ou False, caso contrário.
         """
-        return self.edges.__contains__(edge)
+        vertex_a = self.vertices.get(value_a)
+        vertex_b = self.vertices.get(value_b)
+        edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
+
+        if (self.edges.__contains__(edge_aux)):
+            return True
+        else:
+            return False
 
     def num_edges(self):
         """
@@ -207,7 +215,8 @@ class SimpleGraph():
             - identificador do vértice.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
-        if value_b in neigh_vertices:
+        vertex_b = self.vertices.get(value_b)
+        if vertex_b in neigh_vertices:
             return True
         else:
             return False

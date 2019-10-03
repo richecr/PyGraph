@@ -1,5 +1,6 @@
 from py_graph_t.SimpleGraph import SimpleGraph
 from py_graph_t.vertex.SimpleVertex import SimpleVertex
+from py_graph_t.edges.SimpleEdge import SimpleEdge
 
 g = SimpleGraph()
 
@@ -13,40 +14,3 @@ g.add_edge("c", "d")
 g.add_edge(1, "d", name="terceira_aresta")
 
 print(g.__str__())
-print(g.get_all_vertex())
-
-g.delete_vertex(1)
-print(g.get_all_vertex())
-print(g.__str__())
-
-
-'''
-print(g.list_graph_vertices())
-#print(g.vertices)
-
-#g.delete_vertex(1)
-
-
-
-print(g.edges)
-print(g.vertex_neighbors(1))
-print(g.show_edge(1, "d"))
-
-g.delete_edge(1, "b")
-print(g)
-
-
-print(g.__str__())
-print(g.num_vertex())
-print(g.num_edges())
-print(g.vertex_exists(SimpleVertex("c")))
-print(g.vertex_exists(SimpleVertex(2)))
-
-# print(g.vertex_degree(2))
-print(g.vertex_neighbors("c"))
-
-print(g.vertex_neighbors(1))
-print(g.vertices_adjacency(1, "b"))
-print(g.list_graph_vertices())
-print(g.list_graph_edges())
-'''
