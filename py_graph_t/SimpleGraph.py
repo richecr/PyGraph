@@ -20,6 +20,26 @@ class SimpleGraph():
         """
         self.vertices.append(SimpleVertex(value))
 
+    def delete_vertex(self, vertex):
+        """
+        Método que remove um vertice do grafo e consequentemente todas as arestas
+        conectadas ao vertice.
+
+        Parâmetros:
+        ----------
+        vertex: SimpleVertex
+            - vértice a ser removido
+        """
+
+        if (self.vertex_exists(vertex)):
+            for i in range(len(self.edges)-1,-1,-1):
+
+                edge = self.edges[i]
+                if (self.is_terminal(edge, vertex)):
+                    self.edges.pop(i)
+
+            self.vertices.remove(vertex)
+
     def add_edge(self, name=None, vertex_a=None, vertex_b=None):
         """
         Método que adiciona uma aresta ao grafo.
@@ -37,7 +57,7 @@ class SimpleGraph():
 
     def delete_edge(self, vertex_a, vertex_b):
         """
-        Método que remove uma aresta ao grafo.
+        Método que remove uma aresta do grafo.
 
         Parâmetros:
         ----------
@@ -49,7 +69,25 @@ class SimpleGraph():
             self.edges.remove(edge_aux)
         else:
             return
-                                                               
+
+    def is_terminal(self, edge, vertex):
+        """
+        Método que verifica se um dado vértice é terminal de uma dada aresta.
+        
+        Parâmetros:
+        ----------
+            edge: SimpleEdge
+                - Aresta a ser verificada.
+            vertex: SimpleVertex
+                - vertice a ser verificado.
+        
+        Retorno:
+        ----------
+        Resultado: bool
+            - Valor booleano indicando se o vértice é um dos terminais da aresta.
+        """
+        return edge.vertex_a == vertex.value or edge.vertex_b == vertex.value
+
     def num_vertex(self):
         """
         Método que retorna o número de vértices no grafo.
