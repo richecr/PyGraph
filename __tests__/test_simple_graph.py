@@ -1,6 +1,7 @@
 from ..py_graph_t.SimpleGraph import SimpleGraph
 
-class TestSimpleGraph():
+
+class TestSimpleGraph:
     graph = SimpleGraph()
 
     def test_num_vertex(self):

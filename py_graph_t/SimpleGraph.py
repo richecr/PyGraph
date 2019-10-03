@@ -3,7 +3,8 @@ from .edges.SimpleEdge import SimpleEdge
 
 from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException
 
-class SimpleGraph():
+
+class SimpleGraph:
     """Implementação de um simples grafo."""
     vertices = dict()
     edges = []
@@ -20,7 +21,7 @@ class SimpleGraph():
         value: Um tipo existente ou criado por você
             - Valor a ser colocado no vértice.
         """
-        if (not self.vertices.__contains__(value)):
+        if not self.vertices.__contains__(value):
             self.vertices[value] = SimpleVertex(value)
 
         else:
@@ -37,12 +38,12 @@ class SimpleGraph():
             - identificador do vértice a ser removido
         """
 
-        if (self.vertex_exists(value)):
+        if self.vertex_exists(value):
     
-            for i in range(len(self.edges)-1,-1,-1):
+            for i in range(len(self.edges)-1, -1, -1):
 
                 edge = self.edges[i]
-                if (self.is_terminal(edge, value)):
+                if self.is_terminal(edge, value):
                     self.edges.pop(i)
 
             self.vertices.__delitem__(value)
@@ -64,12 +65,12 @@ class SimpleGraph():
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
 
-        if (vertex_a == None or vertex_b == None):
+        if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
         if SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b) in self.edges:
             raise EdgeDuplicatedException()
         else:
-            self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
+            self.edges.append(SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b))
 
     def delete_edge(self, value_a, value_b):
         """
@@ -86,7 +87,7 @@ class SimpleGraph():
         vertex_b = self.vertices.get(value_b)
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
         
-        if (self.edges.__contains__(edge_aux)):
+        if self.edges.__contains__(edge_aux):
             self.edges.remove(edge_aux)
         else:
             return
@@ -151,7 +152,7 @@ class SimpleGraph():
         vertex_b = self.vertices.get(value_b)
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
 
-        if (self.edges.__contains__(edge_aux)):
+        if self.edges.__contains__(edge_aux):
             return True
         else:
             return False
@@ -200,7 +201,7 @@ class SimpleGraph():
         Quantidade: Int
             - Quantidade de vizinhos do vértice de entrada.
         """
-        if(self.vertex_exists(value)):
+        if self.vertex_exists(value):
             return len(self.vertex_neighbors(value))
         else:
             raise VertexNotExistsException()
@@ -267,7 +268,7 @@ class SimpleGraph():
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
         
-        if (vertex_a == None or vertex_b == None):
+        if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException
         
         edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
