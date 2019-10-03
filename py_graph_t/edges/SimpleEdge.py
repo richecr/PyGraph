@@ -1,4 +1,5 @@
 class SimpleEdge(object):
+    """Classe para criação de arestas."""
     vertex_a = None
     vertex_b = None
     name = None
@@ -11,6 +12,14 @@ class SimpleEdge(object):
         self.vertex_b = vertex_b
 
     def __eq__(self, other):
+        """
+        Método para comparação de duas arestas
+
+        Parâmetros:
+        ---------
+        other: SimpleEdge
+            - aresta a ser comparada
+        """
         if isinstance(other, self.__class__):
             return self.vertex_a == other.vertex_a and self.vertex_b == other.vertex_b
         else:
