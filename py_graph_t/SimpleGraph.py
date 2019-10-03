@@ -1,6 +1,8 @@
 from py_graph_t.vertex.SimpleVertex import SimpleVertex
 from py_graph_t.edges.SimpleEdge import SimpleEdge
 
+from .exceptions.SimpleGraphException import VertexNotExistsException
+
 class SimpleGraph():
     """Implementação de um simples grafo."""
     vertices = []
@@ -123,7 +125,6 @@ class SimpleGraph():
         """
         return self.edges.__contains__(edge)
 
-
     def num_edges(self):
         """
         Método que retorna o número de arestas no grafo.
@@ -167,14 +168,10 @@ class SimpleGraph():
         Quantidade: Int
             - Quantidade de vizinhos do vértice de entrada.
         """
-
-        retorno = -1
-
         if(self.vertex_exists(value)):
-            retorno = len(self.vertex_neighbors(value))
+            return len(self.vertex_neighbors(value))
         else:
-            retorno = -1
-        return retorno
+            raise VertexNotExistsException()
     
     def vertices_adjacency(self, value_a, value_b):
         """
