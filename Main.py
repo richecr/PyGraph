@@ -15,15 +15,11 @@ g.add_edge(1, "d", name="terceira_aresta")
 print(g.__str__())
 print(g.get_all_vertex())
 
-g.delete_edge(1, "d")
-print(g.__str__())
-
 g.delete_vertex(1)
+print(g.get_all_vertex())
 print(g.__str__())
-print(g.get_all_vertex())
 
-g.add_vertex("b")
-print(g.get_all_vertex())
+
 '''
 print(g.list_graph_vertices())
 #print(g.vertices)

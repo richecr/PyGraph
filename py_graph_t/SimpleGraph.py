@@ -39,11 +39,10 @@ class SimpleGraph():
 
         if (self.vertex_exists(value)):
     
-            vertex_aux = SimpleVertex(value)
             for i in range(len(self.edges)-1,-1,-1):
 
                 edge = self.edges[i]
-                if (self.is_terminal(edge, vertex_aux)):
+                if (self.is_terminal(edge, value)):
                     self.edges.pop(i)
 
             self.vertices.__delitem__(value)
