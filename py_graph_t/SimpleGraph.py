@@ -5,7 +5,7 @@ from .exceptions.SimpleGraphException import VertexNotExistsException
 
 class SimpleGraph():
     """Implementação de um simples grafo."""
-    vertices = []
+    vertices = dict()
     edges = []
 
     def __init__(self):
@@ -20,59 +20,80 @@ class SimpleGraph():
         value: Um tipo existente ou criado por você
             - Valor a ser colocado no vértice.
         """
-        self.vertices.append(SimpleVertex(value))
+        if (not self.vertices.__contains__(value)):
+            self.vertices[value] = SimpleVertex(value)
 
-    def delete_vertex(self, vertex):
+        else:
+            pass
+
+    def delete_vertex(self, value):
         """
         Método que remove um vertice do grafo e consequentemente todas as arestas
         conectadas ao vertice.
 
         Parâmetros:
         ----------
-        vertex: SimpleVertex
-            - vértice a ser removido
+        value: *
+            - identificador do vértice a ser removido
         """
 
-        if (self.vertex_exists(vertex)):
+        if (self.vertex_exists(value)):
+    
             for i in range(len(self.edges)-1,-1,-1):
 
                 edge = self.edges[i]
-                if (self.is_terminal(edge, vertex)):
+                if (self.is_terminal(edge, value)):
                     self.edges.pop(i)
 
-            self.vertices.remove(vertex)
+            self.vertices.__delitem__(value)
 
-    def add_edge(self, name=None, vertex_a=None, vertex_b=None):
+    def add_edge(self, value_a, value_b, name=None):
         """
         Método que adiciona uma aresta ao grafo.
 
         Parâmetros:
         ----------
+        value_a: *
+            - Identificador do vértice cabeça da aresta.
+        value_b: *.
+            - Identificador do vértice cauda da aresta.
         name: String
             - Nome da aresta do grafo.
-        vertex_a: Tipo dos vértices.
-            - Vértice cabeça da aresta.
-        vertex_b: Tipo dos vértices.
-            - Vértice cauda da aresta.
         """
-        self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
+        
+        vertex_a = self.vertices.get(value_a)
+        vertex_b = self.vertices.get(value_b)
 
-    def delete_edge(self, vertex_a, vertex_b):
+        if (vertex_a == None or vertex_b == None):
+            raise VertexNotExistsException()
+        
+        else:
+            self.edges.append(SimpleEdge( name=name, vertex_a=vertex_a, vertex_b=vertex_b))
+
+            
+
+    def delete_edge(self, value_a, value_b):
         """
         Método que remove uma aresta do grafo.
 
         Parâmetros:
         ----------
-        edge: SimpleEdge
-            - Aresta a ser removida.
+        value_a: *
+            - Identificador do vértice cabeça da aresta.
+        value_b: *.
+            - Identificador do vértice cauda da aresta.
         """
+
+        vertex_a = self.vertices.get(value_a)
+        vertex_b = self.vertices.get(value_b)
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
+        
         if (self.edges.__contains__(edge_aux)):
             self.edges.remove(edge_aux)
         else:
             return
 
-    def is_terminal(self, edge, vertex):
+    def is_terminal(self, edge, value):
         """
         Método que verifica se um dado vértice é terminal de uma dada aresta.
         
@@ -80,15 +101,15 @@ class SimpleGraph():
         ----------
             edge: SimpleEdge
                 - Aresta a ser verificada.
-            vertex: SimpleVertex
-                - vertice a ser verificado.
+            vertex: *
+                - identificador do vertice.
         
         Retorno:
         ----------
         Resultado: bool
             - Valor booleano indicando se o vértice é um dos terminais da aresta.
         """
-        return edge.vertex_a == vertex.value or edge.vertex_b == vertex.value
+        return edge.vertex_a.value == value or edge.vertex_b.value == value
 
     def num_vertex(self):
         """
@@ -101,17 +122,17 @@ class SimpleGraph():
         """
         return len(self.vertices)
 
-    def vertex_exists(self,vertex):
+    def vertex_exists(self, value):
         """
         Método booleano que indica se um determinado vértice pertence ao Grafo.
 
         Parâmetros:
         ----------
-        vertex: SimpleVertex
-            - vértice a ser verificado
+        value: *
+            - identificador do vértice a ser verificado
            
         """
-        return self.vertices.__contains__(vertex)
+        return self.vertices.__contains__(value)
 
     def edge_exists(self,edge):
         """
@@ -143,13 +164,14 @@ class SimpleGraph():
         Parâmetros:
         ----------
         value: *
-            - Tipo do vértice de entrada.
+            - identificador do vértice a ser verificado
         """
         neigh_vertices = []
+        
         for edge in self.edges:
-            if edge.vertex_a == value:
+            if edge.vertex_a.value == value:
                 neigh_vertices.append(edge.vertex_b)
-            elif edge.vertex_b == value:
+            elif edge.vertex_b.value == value:
                 neigh_vertices.append(edge.vertex_a)
 
         return neigh_vertices
@@ -179,10 +201,10 @@ class SimpleGraph():
 
         Parâmetros:
         ----------
-        vertex_a: *
-            - Tipo dos vértices.
-        vertex_b: *
-            - Tipo dos vértices.
+        value_a: *
+            - identificador do vértice.
+        value_b: *
+            - identificador do vértice.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
         if value_b in neigh_vertices:
@@ -203,11 +225,11 @@ class SimpleGraph():
 
     def list_graph_vertices(self):
         """
-        Método que retorna lista com todos os valores dos vértices do grafo.
+        Método que retorna lista com todos os identificadores dos vértices do grafo.
         """
         vertices = []
         for vertex in self.vertices:
-            vertices.append(vertex.value)
+            vertices.append(vertex)
         return vertices
 
     def list_graph_edges(self):
@@ -219,10 +241,24 @@ class SimpleGraph():
             edges.append(edge.name)
         return edges
     
-    def show_edge(self, vertex_a, vertex_b):
+    def show_edge(self, value_a, value_b):
         """
         Método que retorna uma aresta entre dois vértices, se ela existe.
+
+        Parâmetros:
+        ----------
+        value_a: *
+            - identificador do vértice.
+        value_b: *
+            - identificador do vértice.
         """
+        
+        vertex_a = self.vertices.get(value_a)
+        vertex_b = self.vertices.get(value_b)
+        
+        if (vertex_a == None or vertex_b == None):
+            raise VertexNotExistsException
+        
         edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
         edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
 
