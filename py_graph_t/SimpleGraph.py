@@ -1,5 +1,5 @@
-from py_graph_t.vertex.SimpleVertex import SimpleVertex
-from py_graph_t.edges.SimpleEdge import SimpleEdge
+from .vertex.SimpleVertex import SimpleVertex
+from .edges.SimpleEdge import SimpleEdge
 
 from .exceptions.SimpleGraphException import VertexNotExistsException
 
@@ -229,7 +229,6 @@ class SimpleGraph():
         for edge in self.edges:
             if edge == edge_a or edge == edge_b:
                 return edge
-                
 
     def __str__(self):
         """
