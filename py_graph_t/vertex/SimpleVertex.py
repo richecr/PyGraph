@@ -30,3 +30,9 @@ class SimpleVertex():
             return self.__dict__ == other.__dict__
         else:
             return False
+    
+    def __str__(self):
+        return "Vértice {}".format(self.value)
+
+    def __repr__(self):
+        return str(self)
