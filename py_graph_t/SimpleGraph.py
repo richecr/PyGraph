@@ -278,6 +278,29 @@ class SimpleGraph:
             if edge == edge_a or edge == edge_b:
                 return edge
 
+    def has_loop(self, graph):
+        """
+        Método retorna True se gráfo tem loop/cycle, False caso nao tenha.
+        Parâmetros:
+        ----------
+        graph: *
+            - Object graph of SimpleGraph()
+        """
+        visited = []
+        done = False
+        for i in graph.edges:
+            a = i.vertex_a.value
+            b = i.vertex_b.value
+            if (a,b) not in visited:
+                if (b,a) not in visited:
+                    visited.append((i.vertex_a.value,i.vertex_b.value))
+                else:
+                    done = True
+                    break
+        if done:
+            return True
+        return False
+        
     def __str__(self):
         """
         Método que retorna a representação textual do grafo.
