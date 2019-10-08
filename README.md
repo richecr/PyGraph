@@ -10,7 +10,12 @@ O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafo
     - Ser uma opção aos alunos que chegam com pouca experiência em Java
 
 ## Como contribuir: :smiley:
-Caso você deseje adicionar/atualizar/criar issues bacanas e contribuir para o projeto, leia o [CONTRIBUTING.md](CONTRIBUTING.md).
+
+- PRs são aceitas!
+- Se você pensou em uma feature legal ou descobriu algum bug e não tem tempo para codificar, abra uma issue.
+- Nós seguimos as diretrizes do [PEP 8](https://www.python.org/dev/peps/pep-0008/). Portanto, antes de fazer uma PR verifique se seu código obedece os padrões do PEP 8.
+- Sempre documente seu código.
+- Para mais detalhes sobre como contribuir, acesse o [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Fique tranquilo para enviar sugestões, fazer alterações e/ou procurar erros para nos informar criando uma issue e até mesmo corrigindo e mandando um PR. :relaxed:
 
