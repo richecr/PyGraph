@@ -6,8 +6,8 @@ class SimpleEdge(object):
 
     def __init__(self, name=None, vertex_a=None, vertex_b=None):
         """ Inicialização dos atributos da classe SimpleEdge."""
-        if (name == None):
-            name = vertex_a.__str__() + vertex_b.__str__()
+        if name is None:
+            name = vertex_a.value.__str__() + vertex_b.value.__str__()
         self.name = name
         self.vertex_a = vertex_a
         self.vertex_b = vertex_b
@@ -28,3 +28,6 @@ class SimpleEdge(object):
 
     def __str__(self):
         return self.name + ": " + self.vertex_a.__str__() + " -> " + self.vertex_b.__str__()
+
+    def __repr__(self):
+        return str(self)

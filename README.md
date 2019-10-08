@@ -10,7 +10,7 @@ O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafo
     - Ser uma opção aos alunos que chegam com pouca experiência em Java
 
 ## Como contribuir: :smiley:
-Caso você deseje adicionar/atualizar/criar issues bacanas e contribuir para o projeto, leia o [CONTRIBUTING.md]().
+Caso você deseje adicionar/atualizar/criar issues bacanas e contribuir para o projeto, leia o [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Fique tranquilo para enviar sugestões, fazer alterações e/ou procurar erros para nos informar criando uma issue e até mesmo corrigindo e mandando um PR. :relaxed:
 
