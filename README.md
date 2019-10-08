@@ -5,9 +5,7 @@
 O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafos.
 
     - Praticar os conhecimentos obtidos em Teoria dos Grafos.
-    - Implementar os algoritmos vistos.
-    - Facilitar o uso de grafos.
-    - Ser uma opção aos alunos que chegam com pouca experiência em Java
+    - Facilitar o uso dos algoritmos de grafos.
 
 ## Como contribuir: :smiley:
 
