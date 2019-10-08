@@ -23,7 +23,7 @@ class SimpleGraph:
         """
         if not self.vertices.__contains__(value):
             self.vertices[value] = SimpleVertex(value)
-
+            return self.vertices[value]
         else:
             pass
 
@@ -48,6 +48,31 @@ class SimpleGraph:
 
             self.vertices.__delitem__(value)
 
+    def show_edge(self, value_a, value_b):
+        """
+        Método que retorna uma aresta entre dois vértices, se ela existe.
+
+        Parâmetros:
+        ----------
+        value_a: *
+            - identificador do vértice.
+        value_b: *
+            - identificador do vértice.
+        """
+        
+        vertex_a = self.vertices.get(value_a)
+        vertex_b = self.vertices.get(value_b)
+        
+        if vertex_a is None or vertex_b is None:
+            raise VertexNotExistsException
+        
+        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
+        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
+
+        for edge in self.edges:
+            if edge == edge_a or edge == edge_b:
+                return edge
+
     def add_edge(self, value_a, value_b, name=None):
         """
         Método que adiciona uma aresta ao grafo.
@@ -71,6 +96,7 @@ class SimpleGraph:
             raise EdgeDuplicatedException()
         else:
             self.edges.append(SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b))
+            return self.show_edge(value_a, value_b)
 
     def delete_edge(self, value_a, value_b):
         """
@@ -253,30 +279,6 @@ class SimpleGraph:
             edges.append(edge.name)
         return edges
     
-    def show_edge(self, value_a, value_b):
-        """
-        Método que retorna uma aresta entre dois vértices, se ela existe.
-
-        Parâmetros:
-        ----------
-        value_a: *
-            - identificador do vértice.
-        value_b: *
-            - identificador do vértice.
-        """
-        
-        vertex_a = self.vertices.get(value_a)
-        vertex_b = self.vertices.get(value_b)
-        
-        if vertex_a is None or vertex_b is None:
-            raise VertexNotExistsException
-        
-        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
-        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
-
-        for edge in self.edges:
-            if edge == edge_a or edge == edge_b:
-                return edge
 
     def has_loop(self, graph):
         """
