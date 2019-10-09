@@ -279,13 +279,13 @@ class SimpleGraph:
         return edges
     
 
-    def has_cycle(self,v,visited,parent):   
+    def cycle(self,v,visited,parent):   
         visited[v]= True
 
         for i in self.vertices: 
             if(self.vertices_adjacency(v,i)):
                 if  visited[i] == False :  
-                    if(self.has_cycle(i, visited, v)): 
+                    if(self.cycle(i, visited, v)): 
                         return True
                 elif  parent != i: 
                     return True
@@ -304,7 +304,7 @@ class SimpleGraph:
 
         for i in self.vertices: 
             if visited[i] == False: 
-                if(self.has_cycle(i, visited, -1)) == True: 
+                if(self.cycle(i, visited, -1)) == True: 
                     return True
 
         return False
