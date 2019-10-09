@@ -66,11 +66,10 @@ class SimpleGraph:
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException
         
-        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
-        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
+        edge_test = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
 
         for edge in self.edges:
-            if edge == edge_a or edge == edge_b:
+            if edge_test.__eq__(edge):
                 return edge
 
     def add_edge(self, value_a, value_b, name=None):
@@ -280,17 +279,13 @@ class SimpleGraph:
         return edges
     
 
-    def has_loop(self, graph):
+    def has_loop(self):
         """
         Método retorna True se gráfo tem loop/cycle, False caso nao tenha.
-        Parâmetros:
-        ----------
-        graph: *
-            - Object graph of SimpleGraph()
         """
         visited = []
         done = False
-        for i in graph.edges:
+        for i in self.edges:
             a = i.vertex_a.value
             b = i.vertex_b.value
             if (a,b) not in visited:
