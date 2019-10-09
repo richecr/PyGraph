@@ -279,33 +279,27 @@ class SimpleGraph:
         return edges
     
 
-    def has_cycle(self,v,visited,parent):   
-        visited[v]= True
-  
-        for i in self.vertices: 
-            if(self.vertices_adjacency(v,i)):
-                if  visited[i] == False :  
-                    if(self.has_cycle(i, visited, v)): 
-                        return True
-                elif  parent != i: 
-                    return True
-          
-        return False
-
-
-    def has_loop(self):  
+    def has_loop(self, graph):
         """
-        Função retorna True se gráfo tem loop/cycle, False caso nao tenha.
+        Método retorna True se gráfo tem loop/cycle, False caso nao tenha.
+        Parâmetros:
+        ----------
+        graph: *
+            - Object graph of SimpleGraph()
         """
-        visited = dict()
-        for i in self.vertices:
-            visited[i] = False
-
-        for i in self.vertices: 
-            if visited[i] == False: 
-                if(self.has_cycle(i, visited, -1)) == True: 
-                    return True
-          
+        visited = []
+        done = False
+        for i in graph.edges:
+            a = i.vertex_a.value
+            b = i.vertex_b.value
+            if (a,b) not in visited:
+                if (b,a) not in visited:
+                    visited.append((i.vertex_a.value,i.vertex_b.value))
+                else:
+                    done = True
+                    break
+        if done:
+            return True
         return False
         
     def __str__(self):
