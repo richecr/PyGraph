@@ -114,6 +114,7 @@ class SimpleGraph:
             self.edges.remove(edge_aux)
             # Colocar o método para retorna a aresta removida.
         else:
+            pass
             # TODO
             # Lançar exceção: "Aresta não existe".
 
