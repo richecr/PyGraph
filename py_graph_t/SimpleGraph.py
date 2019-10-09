@@ -373,3 +373,17 @@ class SimpleGraph:
             graph_string += "\n"
         
         return graph_string
+    
+    def check_regular_graph(self):
+        valency = []
+
+        for i in self.vertices:
+            v = 0
+            aux = SimpleVertex(i)
+            for j in self.edges:
+                if aux == j.vertex_a or aux == j.vertex_b:
+                    v += 1
+            valency.append(v)
+
+        return len(set(valency)) <= 1
+
