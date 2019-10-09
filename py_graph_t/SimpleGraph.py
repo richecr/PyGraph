@@ -39,9 +39,7 @@ class SimpleGraph:
         """
 
         if self.vertex_exists(value):
-    
             for i in range(len(self.edges)-1, -1, -1):
-
                 edge = self.edges[i]
                 if self.is_terminal(edge, value):
                     self.edges.pop(i)
@@ -114,8 +112,10 @@ class SimpleGraph:
         
         if self.edges.__contains__(edge_aux):
             self.edges.remove(edge_aux)
+            # Colocar o método para retorna a aresta removida.
         else:
-            return
+            # TODO
+            # Lançar exceção: "Aresta não existe".
 
     def is_terminal(self, edge, value):
         """
@@ -130,7 +130,7 @@ class SimpleGraph:
         
         Retorno:
         ----------
-        Resultado: bool
+        resultado: bool
             - Valor booleano indicando se o vértice é um dos terminais da aresta.
         """
         return edge.vertex_a.value == value or edge.vertex_b.value == value
@@ -148,13 +148,18 @@ class SimpleGraph:
 
     def vertex_exists(self, value):
         """
-        Método booleano que indica se um determinado vértice pertence ao Grafo.
+        Método que indica se um determinado vértice pertence ao Grafo.
 
         Parâmetros:
         ----------
         value: *
             - identificador do vértice a ser verificado
-           
+
+        Retorno:
+        ----------
+        True: Caso o vertice pertença ao grafo.
+
+        False: Caso não.
         """
         return self.vertices.__contains__(value)
 
@@ -171,7 +176,9 @@ class SimpleGraph:
         
         Retorno:
         ----------
-        True, caso a aresta exista ou False, caso contrário.
+        True: caso a aresta exista.
+
+        False: caso contrário.
         """
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
@@ -195,12 +202,17 @@ class SimpleGraph:
 
     def vertex_neighbors(self, value):
         """
-        Método que retorna uma lista com os vértices vizinhos do vértice de entrada.
+        Método que encontra vertices vizinhos do vertice de entrada.
 
         Parâmetros:
         ----------
         value: *
-            - identificador do vértice a ser verificado
+            - identificador do vertice.
+        
+        Retorno:
+        ----------
+        neigh_vertices: List
+            - Lista de vertices.
         """
         neigh_vertices = []
         
@@ -231,9 +243,9 @@ class SimpleGraph:
         else:
             raise VertexNotExistsException()
     
-    def vertices_adjacency(self, value_a, value_b):
+    def is_vertices_adjacents(self, value_a, value_b):
         """
-        Método booleano que indica se os vértices de entrada são adjacentes.
+        Método que indica se os vértices de entrada são adjacentes.
 
         Parâmetros:
         ----------
@@ -241,6 +253,11 @@ class SimpleGraph:
             - identificador do vértice.
         value_b: *
             - identificador do vértice.
+        
+        Retorno:
+        ----------
+        True: Caso os vertices sejam adjacentes.
+        False: Caso contrario.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
         vertex_b = self.vertices.get(value_b)
@@ -263,6 +280,10 @@ class SimpleGraph:
     def list_graph_vertices(self):
         """
         Método que retorna lista com todos os identificadores dos vértices do grafo.
+
+        Retorno:
+        ----------
+        vertices: lista com o nome de todas os vértices do grafo.
         """
         vertices = []
         for vertex in self.vertices:
@@ -272,6 +293,10 @@ class SimpleGraph:
     def list_graph_edges(self):
         """
         Método que retorna lista com todos os nomes as arestas do grafo.
+        
+        Retorno:
+        ----------
+        edges: lista com o nome de todas as arestas do grafo.
         """
         edges = []
         for edge in self.edges:
@@ -279,11 +304,29 @@ class SimpleGraph:
         return edges
     
 
-    def cycle(self,v,visited,parent):   
+    def cycle(self, v, visited, parent):
+        """
+        Método que verifica se tem ciclo no subgrafo a partir do vértice v.
+
+        Parâmetros:
+        ----------
+        v: *
+            - Vértice.
+        visited: *
+            - Lista de vértices já visitados.
+        parent: *
+            - Pai do vértice atual.
+        
+        Retorno:
+        ----------
+        True: se o subgrafo possuir um loop.
+
+        False: caso não possua.
+        """
         visited[v]= True
 
         for i in self.vertices: 
-            if(self.vertices_adjacency(v,i)):
+            if(self.is_vertices_adjacents(v,i)):
                 if  visited[i] == False :  
                     if(self.cycle(i, visited, v)): 
                         return True
@@ -292,10 +335,15 @@ class SimpleGraph:
 
         return False
 
-
     def has_loop(self): 
         """
-        Função retorna True se gráfo tem loop/cycle, False caso nao tenha.
+        Método que verifica se o grafo possui um loop/ciclo.
+
+        Retorno:
+        ----------
+        True: se gráfo possuir loop/ciclo.
+
+        False: caso nao possua.
         """
         visited = dict()
 
