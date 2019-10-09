@@ -66,11 +66,10 @@ class SimpleGraph:
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException
         
-        edge_a = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
-        edge_b = SimpleEdge(vertex_a=vertex_b, vertex_b=vertex_a)
+        edge_test = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
 
         for edge in self.edges:
-            if edge == edge_a or edge == edge_b:
+            if edge_test.__eq__(edge):
                 return edge
 
     def add_edge(self, value_a, value_b, name=None):

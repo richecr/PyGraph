@@ -22,7 +22,7 @@ class SimpleEdge(object):
             - aresta a ser comparada
         """
         if isinstance(other, self.__class__):
-            return self.vertex_a == other.vertex_a and self.vertex_b == other.vertex_b
+            return (self.vertex_a == other.vertex_a and self.vertex_b == other.vertex_b) or (self.vertex_b == other.vertex_a and self.vertex_a == other.vertex_b)
         else:
             return False
 
