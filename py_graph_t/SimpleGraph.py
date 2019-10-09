@@ -279,17 +279,13 @@ class SimpleGraph:
         return edges
     
 
-    def has_loop(self, graph):
+    def has_loop(self):
         """
         Método retorna True se gráfo tem loop/cycle, False caso nao tenha.
-        Parâmetros:
-        ----------
-        graph: *
-            - Object graph of SimpleGraph()
         """
         visited = []
         done = False
-        for i in graph.edges:
+        for i in self.edges:
             a = i.vertex_a.value
             b = i.vertex_b.value
             if (a,b) not in visited:
