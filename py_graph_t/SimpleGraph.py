@@ -375,6 +375,15 @@ class SimpleGraph:
         return graph_string
     
     def check_regular_graph(self):
+        """
+        Função que verifica a regularidade de um grafo.
+
+        Retorno:
+        ----------
+        True: Se o grafo for regular.
+
+        False: Se o grafo não for regular.
+        """
         valency = []
 
         for i in self.vertices:
