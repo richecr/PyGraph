@@ -1,7 +1,7 @@
 from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 
-from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException
+from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException
 
 
 class SimpleGraph:
@@ -112,11 +112,9 @@ class SimpleGraph:
         
         if self.edges.__contains__(edge_aux):
             self.edges.remove(edge_aux)
-            # Colocar o método para retorna a aresta removida.
+            return edge_aux
         else:
-            pass
-            # TODO
-            # Lançar exceção: "Aresta não existe".
+            raise EdgeNotFoundException()
 
     def is_terminal(self, edge, value):
         """

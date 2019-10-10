@@ -12,4 +12,7 @@ g.add_edge(1, "b", name="primeira_aresta")
 g.add_edge("c", "d")
 g.add_edge(1, "d", name="terceira_aresta")
 
+a = g.delete_edge(1, 'c')
+print(a)
+print("-------")
 print(g.__str__())
