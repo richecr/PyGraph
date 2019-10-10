@@ -112,3 +112,26 @@ class TestSimpleGraph:
         self.graph.add_edge("b", "c", 2)
         self.graph.add_edge("c", "d", 3)
         assert self.graph.has_loop() == False
+
+    def test_true_regular_graph(self):
+        self.graph.edges = []
+        self.graph.vertices = dict()
+        self.graph.add_vertex("a")
+        self.graph.add_vertex("b")
+        self.graph.add_vertex("c")
+        self.graph.add_edge("a", "b", 1)
+        self.graph.add_edge("b", "c", 2)
+        self.graph.add_edge("c", "a", 3)
+        assert self.graph.check_regular_graph() == True
+
+    def test_false_regular_graph(self):
+        self.graph.edges = []
+        self.graph.vertices = dict()
+        self.graph.add_vertex("a")
+        self.graph.add_vertex("b")
+        self.graph.add_vertex("c")
+        self.graph.add_vertex("d")
+        self.graph.add_edge("a", "b", 1)
+        self.graph.add_edge("b", "c", 2)
+        self.graph.add_edge("c", "d", 3)
+        assert self.graph.check_regular_graph() == False
