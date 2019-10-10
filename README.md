@@ -1,7 +1,7 @@
 # PyGraph
 > Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
 
-## Objetivo da biblioteca:
+## Objetivo:
 O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafos.
 
     - Praticar os conhecimentos obtidos em Teoria dos Grafos.
@@ -17,7 +17,7 @@ O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafo
 
 Fique tranquilo para enviar sugestões, fazer alterações e/ou procurar erros para nos informar criando uma issue e até mesmo corrigindo e mandando um PR. :relaxed:
 
-## Não quer contribuir com código?
-Não tem problema, temos lugar para todo mundo. Você não precisa codificar pra ajudar, pode contribuir com ideias, achando problemas, contribuindo com a documentação e/ou dando sugestões e etc.
+## QUer contribuir, mas não com código ?
+Não tem problema, temos lugar para todo mundo. Você não precisa codificar pra ajudar, pode contribuir com ideias, encontrando problemas, contribuindo com a documentação e/ou dando sugestões e etc.
 
 Mas se você quiser codificar e dar seus primeiros passos por aqui seja muito bem vindo(a), todos estamos aqui pra aprender.
