@@ -27,7 +27,7 @@ class SimpleEdge(object):
             return False
 
     def __str__(self):
-        return self.name + ": " + self.vertex_a.__str__() + " -> " + self.vertex_b.__str__()
+        return str(self.name) + ": " + self.vertex_a.__str__() + " -> " + self.vertex_b.__str__()
 
     def __repr__(self):
         return str(self)

@@ -1,7 +1,7 @@
 from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 
-from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException
+from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException, VertexDuplicatedException
 
 
 class SimpleGraph:
@@ -25,7 +25,7 @@ class SimpleGraph:
             self.vertices[value] = SimpleVertex(value)
             return self.vertices[value]
         else:
-            pass
+            raise VertexDuplicatedException()
 
     def delete_vertex(self, value):
         """
@@ -38,6 +38,7 @@ class SimpleGraph:
             - identificador do vértice a ser removido
         """
 
+        vertex_removed = self.vertices[value]
         if self.vertex_exists(value):
             for i in range(len(self.edges)-1, -1, -1):
                 edge = self.edges[i]
@@ -45,6 +46,8 @@ class SimpleGraph:
                     self.edges.pop(i)
 
             self.vertices.__delitem__(value)
+        
+        return vertex_removed
 
     def show_edge(self, value_a, value_b):
         """

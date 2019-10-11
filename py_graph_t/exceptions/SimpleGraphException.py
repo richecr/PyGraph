@@ -6,8 +6,12 @@ class VertexNotExistsException(Exception):
 
 class EdgeDuplicatedException(Exception):
     def __str__(self):
-        return "Aresta Duplicada"
+        return "Aresta duplicada"
 
 class EdgeNotFoundException(Exception):
     def __str__(self):
         return "Aresta não existe"
+
+class VertexDuplicatedException(Exception):
+    def __str__(self):
+        return "Vértice duplicado"
