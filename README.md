@@ -17,7 +17,10 @@ O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafo
 
 Fique tranquilo para enviar sugestões, fazer alterações e/ou procurar erros para nos informar criando uma issue e até mesmo corrigindo e mandando um PR. :relaxed:
 
-## QUer contribuir, mas não com código ?
+## Quer contribuir, mas não com código ?
 Não tem problema, temos lugar para todo mundo. Você não precisa codificar pra ajudar, pode contribuir com ideias, encontrando problemas, contribuindo com a documentação e/ou dando sugestões e etc.
 
 Mas se você quiser codificar e dar seus primeiros passos por aqui seja muito bem vindo(a), todos estamos aqui pra aprender.
+
+## Hall of Fame
+[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/0)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/0)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/1)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/1)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/2)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/2)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/3)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/3)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/4)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/4)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/5)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/5)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/6)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/6)[![](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/images/7)](https://sourcerer.io/fame/Rickecr/Rickecr/PyGraph/links/7)
