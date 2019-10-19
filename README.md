@@ -7,6 +7,11 @@ O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafo
     - Praticar os conhecimentos obtidos em Teoria dos Grafos.
     - Facilitar o uso dos algoritmos de grafos.
 
+## Estrutura:
+O modelo UML dos tipos dos grafos:
+
+![Estrutura](https://i.imgur.com/N3ytGeT.jpg)
+
 ## Como contribuir: :smiley:
 
 - PRs são aceitas!
