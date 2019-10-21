@@ -16,7 +16,7 @@
 
 ![Imgur](https://i.imgur.com/iI7QoJO.jpg)
 
-## Como contribuir: :smiley:
+## Como contribuir ? :smiley:
 
 - PRs são aceitas!
 - Se você pensou em uma feature legal ou descobriu algum bug e não tem tempo para codificar, abra uma issue.
@@ -28,7 +28,7 @@ Fique tranquilo para enviar sugestões, fazer alterações e/ou procurar erros p
 
 ## Quer contribuir, mas não com código ?
 
-- Não tem problema, temos lugar para todo mundo. Você não precisa codificar pra ajudar, pode contribuir com ideias, encontrando problemas, contribuindo com a documentação e/ou dando sugestões e etc.
+Não tem problema, temos lugar para todo mundo. Você não precisa codificar pra ajudar, pode contribuir com ideias, encontrando problemas, contribuindo com a documentação e/ou dando sugestões e etc.
 
 Mas se você quiser codificar e dar seus primeiros passos por aqui seja muito bem vindo(a), todos estamos aqui pra aprender.
 
