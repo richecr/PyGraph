@@ -1,18 +1,17 @@
-from py_graph_t.SimpleGraph import SimpleGraph
+from py_graph_t.Graph import Graph
 
-g = SimpleGraph()
+g = Graph()
 
-g.add_vertex(1)
-
+g.add_vertex("a")
 g.add_vertex("b")
 g.add_vertex("c")
-g.add_vertex("d")
 
-g.add_edge(1, "b", name="primeira_aresta")
-g.add_edge("c", "d")
-g.add_edge(1, "d", name="terceira_aresta")
+g.add_edge("a", "b", name="primeira_aresta")
+g.add_edge("b", "c")
+try:
+    g.add_edge("c", "a", name="terceira_aresta")
+except Exception as identifier:
+    pass
 
-a = g.delete_edge(1, 'c')
-print(a)
-print("-------")
+
 print(g.__str__())
