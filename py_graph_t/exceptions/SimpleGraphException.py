@@ -3,7 +3,6 @@ class VertexNotExistsException(Exception):
     def __str__(self):
         return "Vértice não existe"
 
-
 class EdgeDuplicatedException(Exception):
     def __str__(self):
         return "Aresta duplicada"
@@ -15,3 +14,7 @@ class EdgeNotFoundException(Exception):
 class VertexDuplicatedException(Exception):
     def __str__(self):
         return "Vértice duplicado"
+
+class CycleDetectedException(Exception):
+    def __str__(self):
+        return "Esse tipo de grafo não pode conter ciclo"

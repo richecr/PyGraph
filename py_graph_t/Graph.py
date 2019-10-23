@@ -17,8 +17,9 @@ class Graph:
 
         Parâmetros:
         ----------
-        value: Um tipo existente ou criado por você
+        value:
             - Valor a ser colocado no vértice.
+            - Identificador do vértice.
         """
         if not self.vertices.__contains__(value):
             self.vertices[value] = SimpleVertex(value)
@@ -33,10 +34,9 @@ class Graph:
 
         Parâmetros:
         ----------
-        value: *
-            - identificador do vértice a ser removido
+        value:
+            - Identificador do vértice a ser removido
         """
-
         vertex_removed = self.vertices[value]
         if self.vertex_exists(value):
             for i in range(len(self.edges)-1, -1, -1):
@@ -54,10 +54,10 @@ class Graph:
 
         Parâmetros:
         ----------
-        value_a: *
-            - identificador do vértice.
-        value_b: *
-            - identificador do vértice.
+        value_a:
+            - Identificador do vértice.
+        value_b:
+            - Identificador do vértice.
         """
         
         vertex_a = self.vertices.get(value_a)
@@ -78,23 +78,23 @@ class Graph:
 
         Parâmetros:
         ----------
-        value_a: *
+        value_a:
             - Identificador do vértice cabeça da aresta.
-        value_b: *.
+        value_b:
             - Identificador do vértice cauda da aresta.
         name: String
             - Nome da aresta do grafo.
         """
-        
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
+        new_edge = SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b)
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
-        if SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b) in self.edges:
+        if new_edge in self.edges:
             raise EdgeDuplicatedException()
         else:
-            self.edges.append(SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b))
+            self.edges.append(new_edge)
             return self.show_edge(value_a, value_b)
 
     def delete_edge(self, value_a, value_b):
@@ -103,13 +103,15 @@ class Graph:
 
         Parâmetros:
         ----------
-        value_a: *
+        value_a:
             - Identificador do vértice cabeça da aresta.
-        value_b: *.
+        value_b:
             - Identificador do vértice cauda da aresta.
         """
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
+        print(str(value_a))
+        print(str(value_b))
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
         
         if self.edges.__contains__(edge_aux):
@@ -124,10 +126,10 @@ class Graph:
         
         Parâmetros:
         ----------
-            edge: SimpleEdge
-                - Aresta a ser verificada.
-            vertex: *
-                - identificador do vertice.
+        edge: SimpleEdge
+            - Aresta a ser verificada.
+        value:
+            - Identificador do vertice.
         
         Retorno:
         ----------
@@ -153,8 +155,8 @@ class Graph:
 
         Parâmetros:
         ----------
-        value: *
-            - identificador do vértice a ser verificado
+        value:
+            - Identificador do vértice a ser verificado
 
         Retorno:
         ----------
@@ -170,9 +172,9 @@ class Graph:
 
         Parâmetros:
         ----------
-        value_a: 
+        value_a:
             - Identificador do vértice cabeça da aresta.
-        value_b: 
+        value_b:
             - Identificador do vértice cauda da aresta.
         
         Retorno:
@@ -207,8 +209,8 @@ class Graph:
 
         Parâmetros:
         ----------
-        value: *
-            - identificador do vertice.
+        value:
+            - Identificador do vertice.
         
         Retorno:
         ----------
@@ -231,13 +233,13 @@ class Graph:
 
         Parâmetros:
         ----------
-        value: *
-            - Tipo do vértice de entrada.
+        value:
+            - Identificador do vertice.
 
         Retorno:
         ----------
-        Quantidade: Int
-            - Quantidade de vizinhos do vértice de entrada.
+        Grau: Int
+            - Grau do vértice de entrada.
         """
         if self.vertex_exists(value):
             return len(self.vertex_neighbors(value))
@@ -250,14 +252,15 @@ class Graph:
 
         Parâmetros:
         ----------
-        value_a: *
-            - identificador do vértice.
-        value_b: *
-            - identificador do vértice.
+        value_a:
+            - Identificador do vértice.
+        value_b:
+            - Identificador do vértice.
         
         Retorno:
         ----------
         True: Caso os vertices sejam adjacentes.
+
         False: Caso contrario.
         """
         neigh_vertices = self.vertex_neighbors(value_a)
@@ -304,18 +307,17 @@ class Graph:
             edges.append(edge.name)
         return edges
     
-
     def cycle(self, v, visited, parent):
         """
         Método que verifica se tem ciclo no subgrafo a partir do vértice v.
 
         Parâmetros:
         ----------
-        v: *
+        v:
             - Vértice.
-        visited: *
+        visited:
             - Lista de vértices já visitados.
-        parent: *
+        parent:
             - Pai do vértice atual.
         
         Retorno:
@@ -358,22 +360,6 @@ class Graph:
 
         return False
         
-    def __str__(self):
-        """
-        Método que retorna a representação textual do grafo.
-
-        Retorno:
-        ----------
-        graph_string: String
-            - Representação textual do grafo.
-        """
-        graph_string = ""
-        for edge in self.edges:
-            graph_string += edge.__str__()
-            graph_string += "\n"
-        
-        return graph_string
-    
     def check_regular_graph(self):
         """
         Função que verifica a regularidade de um grafo.
@@ -395,4 +381,20 @@ class Graph:
             valency.append(v)
 
         return len(set(valency)) <= 1
+    
+    def __str__(self):
+        """
+        Método que retorna a representação textual do grafo.
+
+        Retorno:
+        ----------
+        graph_string: String
+            - Representação textual do grafo.
+        """
+        graph_string = ""
+        for edge in self.edges:
+            graph_string += edge.__str__()
+            graph_string += "\n"
+        
+        return graph_string
 
