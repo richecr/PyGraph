@@ -20,5 +20,19 @@ class ValueBinding:
     def get_value(self):
         return self.value
     
+    def __eq__(self, other):
+        """
+        Método para comparação de duas arestas
+
+        Parâmetros:
+        ---------
+        other: ValueBinding
+            - aresta a ser comparada
+        """
+        if isinstance(other, self.__class__):
+           return self.__dict__ == other.__dict__
+        else:
+            return False
+    
     def __repr__(self):
         return str(self.vertex_name) + " - " + str(self.edge_name) + " => " + str(self.value)
