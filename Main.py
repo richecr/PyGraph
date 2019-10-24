@@ -6,12 +6,10 @@ g.add_vertex("a")
 g.add_vertex("b")
 g.add_vertex("c")
 
-g.add_edge("a", "b", name="primeira_aresta")
-g.add_edge("b", "c")
-try:
-    g.add_edge("c", "a", name="terceira_aresta")
-except Exception as identifier:
-    pass
+g.add_edge("a", "b", name="s")
+g.add_edge("b", "c", name="t")
+g.add_edge("a", "a", name="d")
 
-
+i = g.incidence_list()
+print(i)
 print(g.__str__())

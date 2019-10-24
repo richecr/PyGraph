@@ -2,6 +2,7 @@ import pytest
 
 from ..py_graph_t.SimpleGraph import SimpleGraph
 from ..py_graph_t.exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException, VertexDuplicatedException, CycleDetectedException
+from ..py_graph_t.Graph import Graph
 
 class TestSimpleGraph:
     graph = SimpleGraph()

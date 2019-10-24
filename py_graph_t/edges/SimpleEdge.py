@@ -12,6 +12,9 @@ class SimpleEdge(object):
         self.vertex_a = vertex_a
         self.vertex_b = vertex_b
 
+    def get_name(self):
+        return self.name
+
     def __eq__(self, other):
         """
         Método para comparação de duas arestas
