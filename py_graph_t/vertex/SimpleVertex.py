@@ -14,6 +14,9 @@ class SimpleVertex():
         """
         self.value = value
 
+    def get_value(self):
+        return self.value
+
     def set_value(self, new_value):
         """
         Método que altera o valor do vértice.

@@ -1,5 +1,6 @@
 from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
+from .util.ValueBinding import ValueBinding
 
 from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException, VertexDuplicatedException
 
@@ -381,6 +382,28 @@ class Graph:
             valency.append(v)
 
         return len(set(valency)) <= 1
+
+    def incidence_list(self):
+        """
+        Método que retorna uma lista de objetos que contem
+        a incidencia dos vertices com as arestas.
+
+        Retorno:
+        ----------
+        incidence_list: List
+            - Lista com os objetos de ligação(ValueBinding).
+        """
+        incidence_list = []
+        for v in self.vertices.values():      
+            for e in self.edges:
+                if e.vertex_a == v and e.vertex_b == v:
+                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 2))
+                elif e.vertex_a == v or e.vertex_b == v:
+                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 1))
+                else:
+                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 0))
+
+        return incidence_list
     
     def __str__(self):
         """
