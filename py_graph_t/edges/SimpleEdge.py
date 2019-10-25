@@ -25,12 +25,18 @@ class SimpleEdge(object):
             - aresta a ser comparada
         """
         if isinstance(other, self.__class__):
-            return (self.vertex_a == other.vertex_a and self.vertex_b == other.vertex_b) or (self.vertex_b == other.vertex_a and self.vertex_a == other.vertex_b)
+            result1 = self.vertex_a == other.vertex_a and \
+                self.vertex_b == other.vertex_b
+            result2 = self.vertex_b == other.vertex_a and \
+                self.vertex_a == other.vertex_b
+            return result1 or result2
         else:
             return False
 
     def __str__(self):
-        return str(self.name) + ": " + self.vertex_a.__str__() + " -> " + self.vertex_b.__str__()
+        return str(self.name) + ": " + \
+            self.vertex_a.__str__() + " -> " + \
+            self.vertex_b.__str__()
 
     def __repr__(self):
         return str(self)
