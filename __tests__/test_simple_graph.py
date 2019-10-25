@@ -61,10 +61,11 @@ class TestSimpleGraph:
         assert vertex_b in neighbors_vertices
 
     def test_get_all_vertex(self):
-        assert str(self.graph.get_all_vertex()) == \
-            "{'b': Vértice b, 'a': Vértice a, '0': Vértice 0, '1': Vértice 1,\
-            '2': Vértice 2, '3': Vértice 3, '4': Vértice 4, '5': Vértice 5, \
-            '6': Vértice 6, '7': Vértice 7, '8': Vértice 8, '9': Vértice 9}"
+        assert str(self.graph.get_all_vertex()) == "{'b': Vértice b, " + \
+            "'a': Vértice a, '0': Vértice 0, '1': Vértice 1, " + \
+            "'2': Vértice 2, '3': Vértice 3, '4': Vértice 4, " + \
+            "'5': Vértice 5, '6': Vértice 6, '7': Vértice 7, " + \
+            "'8': Vértice 8, '9': Vértice 9}"
 
     def test_list_graph_vertices(self):
         vertices = []
