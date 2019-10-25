@@ -2,7 +2,13 @@ from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 from .util.ValueBinding import ValueBinding
 
-from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException, VertexDuplicatedException
+from .exceptions.SimpleGraphException import (
+    VertexNotExistsException,
+    EdgeDuplicatedException,
+    EdgeNotFoundException,
+    VertexDuplicatedException
+)
+
 
 class Graph:
     """Implementação de um grafo base."""
@@ -30,7 +36,8 @@ class Graph:
 
     def delete_vertex(self, value):
         """
-        Método que remove um vertice do grafo e consequentemente todas as arestas
+        Método que remove um vertice do grafo e consequentemente todas
+        as arestas
         conectadas ao vertice.
 
         Parâmetros:
@@ -46,12 +53,12 @@ class Graph:
                     self.edges.pop(i)
 
             self.vertices.__delitem__(value)
-        
         return vertex_removed
 
     def show_edge(self, value_a, value_b):
         """
-        Método que retorna uma aresta entre dois vértices, se ela existe.
+        Método que retorna uma aresta entre dois vértices, se ela
+        existe.
 
         Parâmetros:
         ----------
@@ -60,14 +67,13 @@ class Graph:
         value_b:
             - Identificador do vértice.
         """
-        
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
-        
+
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException
-        
-        edge_test = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)      
+
+        edge_test = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
 
         for edge in self.edges:
             if edge_test.__eq__(edge):
@@ -114,7 +120,7 @@ class Graph:
         print(str(value_a))
         print(str(value_b))
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
-        
+
         if self.edges.__contains__(edge_aux):
             self.edges.remove(edge_aux)
             return edge_aux
@@ -123,19 +129,21 @@ class Graph:
 
     def is_terminal(self, edge, value):
         """
-        Método que verifica se um dado vértice é terminal de uma dada aresta.
-        
+        Método que verifica se um dado vértice é terminal de uma
+        dada aresta.
+
         Parâmetros:
         ----------
         edge: SimpleEdge
             - Aresta a ser verificada.
         value:
             - Identificador do vertice.
-        
+
         Retorno:
         ----------
         resultado: bool
-            - Valor booleano indicando se o vértice é um dos terminais da aresta.
+            - Valor booleano indicando se o vértice é um dos terminais
+            da aresta.
         """
         return edge.vertex_a.value == value or edge.vertex_b.value == value
 
@@ -169,7 +177,8 @@ class Graph:
 
     def edge_exists(self, value_a, value_b):
         """
-        Método booleano que indica se um determinada aresta pertence ao Grafo.
+        Método booleano que indica se um determinada aresta pertence
+        ao Grafo.
 
         Parâmetros:
         ----------
@@ -177,7 +186,7 @@ class Graph:
             - Identificador do vértice cabeça da aresta.
         value_b:
             - Identificador do vértice cauda da aresta.
-        
+
         Retorno:
         ----------
         True: caso a aresta exista.
@@ -212,20 +221,19 @@ class Graph:
         ----------
         value:
             - Identificador do vertice.
-        
+
         Retorno:
         ----------
         neigh_vertices: List
             - Lista de vertices.
         """
         neigh_vertices = []
-        
+
         for edge in self.edges:
             if edge.vertex_a.value == value:
                 neigh_vertices.append(edge.vertex_b)
             elif edge.vertex_b.value == value:
                 neigh_vertices.append(edge.vertex_a)
-
         return neigh_vertices
 
     def vertex_degree(self, value):
@@ -246,7 +254,7 @@ class Graph:
             return len(self.vertex_neighbors(value))
         else:
             raise VertexNotExistsException()
-    
+
     def is_vertices_adjacents(self, value_a, value_b):
         """
         Método que indica se os vértices de entrada são adjacentes.
@@ -257,7 +265,7 @@ class Graph:
             - Identificador do vértice.
         value_b:
             - Identificador do vértice.
-        
+
         Retorno:
         ----------
         True: Caso os vertices sejam adjacentes.
@@ -284,7 +292,8 @@ class Graph:
 
     def list_graph_vertices(self):
         """
-        Método que retorna lista com todos os identificadores dos vértices do grafo.
+        Método que retorna lista com todos os identificadores dos
+        vértices do grafo.
 
         Retorno:
         ----------
@@ -297,8 +306,9 @@ class Graph:
 
     def list_graph_edges(self):
         """
-        Método que retorna lista com todos os nomes as arestas do grafo.
-        
+        Método que retorna lista com todos os nomes as arestas
+        do grafo.
+
         Retorno:
         ----------
         edges: lista com o nome de todas as arestas do grafo.
@@ -307,10 +317,11 @@ class Graph:
         for edge in self.edges:
             edges.append(edge.name)
         return edges
-    
+
     def cycle(self, v, visited, parent):
         """
-        Método que verifica se tem ciclo no subgrafo a partir do vértice v.
+        Método que verifica se tem ciclo no subgrafo a partir
+        do vértice v.
 
         Parâmetros:
         ----------
@@ -320,26 +331,25 @@ class Graph:
             - Lista de vértices já visitados.
         parent:
             - Pai do vértice atual.
-        
+
         Retorno:
         ----------
         True: se o subgrafo possuir um loop.
 
         False: caso não possua.
         """
-        visited[v]= True
+        visited[v] = True
 
-        for i in self.vertices: 
-            if(self.is_vertices_adjacents(v,i)):
-                if  visited[i] == False :  
-                    if(self.cycle(i, visited, v)): 
+        for i in self.vertices:
+            if(self.is_vertices_adjacents(v, i)):
+                if visited[i] is False:
+                    if(self.cycle(i, visited, v)):
                         return True
-                elif  parent != i: 
+                elif parent != i:
                     return True
-
         return False
 
-    def has_loop(self): 
+    def has_loop(self):
         """
         Método que verifica se o grafo possui um loop/ciclo.
 
@@ -354,13 +364,12 @@ class Graph:
         for i in self.vertices:
             visited[i] = False
 
-        for i in self.vertices: 
-            if visited[i] == False: 
-                if(self.cycle(i, visited, -1)) == True: 
+        for i in self.vertices:
+            if visited[i] is False:
+                if(self.cycle(i, visited, -1)) is True:
                     return True
-
         return False
-        
+
     def check_regular_graph(self):
         """
         Função que verifica a regularidade de um grafo.
@@ -380,7 +389,6 @@ class Graph:
                 if aux == j.vertex_a or aux == j.vertex_b:
                     v += 1
             valency.append(v)
-
         return len(set(valency)) <= 1
 
     def incidence_list(self):
@@ -394,17 +402,22 @@ class Graph:
             - Lista com os objetos de ligação(ValueBinding).
         """
         incidence_list = []
-        for v in self.vertices.values():      
+        for v in self.vertices.values():
             for e in self.edges:
                 if e.vertex_a == v and e.vertex_b == v:
-                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 2))
+                    incidence_list.append(
+                        ValueBinding(v.get_value(), e.get_name(), 2)
+                    )
                 elif e.vertex_a == v or e.vertex_b == v:
-                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 1))
+                    incidence_list.append(
+                        ValueBinding(v.get_value(), e.get_name(), 1)
+                    )
                 else:
-                    incidence_list.append(ValueBinding(v.get_value(), e.get_name(), 0))
-
+                    incidence_list.append(
+                        ValueBinding(v.get_value(), e.get_name(), 0)
+                    )
         return incidence_list
-    
+
     def __str__(self):
         """
         Método que retorna a representação textual do grafo.
@@ -418,6 +431,4 @@ class Graph:
         for edge in self.edges:
             graph_string += edge.__str__()
             graph_string += "\n"
-        
         return graph_string
-

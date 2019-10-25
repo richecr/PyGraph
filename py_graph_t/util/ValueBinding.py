@@ -1,6 +1,7 @@
 class ValueBinding:
     """
-    Classe que representa uma ligação de incidência de um vértice e a aresta de um grafo.
+    Classe que representa uma ligação de incidência de um
+    vértice e a aresta de um grafo.
     """
 
     def __init__(self, vertex_name, edge_name, value):
@@ -10,7 +11,7 @@ class ValueBinding:
         self.vertex_name = vertex_name
         self.edge_name = edge_name
         self.value = value
-    
+
     def get_vertex_name(self):
         return self.vertex_name
 
@@ -19,7 +20,7 @@ class ValueBinding:
 
     def get_value(self):
         return self.value
-    
+
     def __eq__(self, other):
         """
         Método para comparação de duas arestas
@@ -30,9 +31,12 @@ class ValueBinding:
             - aresta a ser comparada
         """
         if isinstance(other, self.__class__):
-           return self.__dict__ == other.__dict__
+            return self.__dict__ == other.__dict__
         else:
             return False
-    
+
     def __repr__(self):
-        return str(self.vertex_name) + " - " + str(self.edge_name) + " => " + str(self.value)
+        resullt = str(self.vertex_name) + " - "
+        resullt += str(self.edge_name) + " => "
+        resullt += str(self.value)
+        return result

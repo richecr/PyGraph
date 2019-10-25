@@ -2,12 +2,19 @@ from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 from .Graph import Graph
 
-from .exceptions.SimpleGraphException import VertexNotExistsException, EdgeDuplicatedException, EdgeNotFoundException, VertexDuplicatedException, CycleDetectedException
+from .exceptions.SimpleGraphException import (
+    VertexNotExistsException,
+    EdgeDuplicatedException,
+    EdgeNotFoundException,
+    VertexDuplicatedException,
+    CycleDetectedException
+)
+
 
 class SimpleGraph(Graph):
     """
-    Implementação de um Grafo Simples. 
-    
+    Implementação de um Grafo Simples.
+
     Um grafo simples ``não contém``:
         - Loops
         - Arestas paralelas
