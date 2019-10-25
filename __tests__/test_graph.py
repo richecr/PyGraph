@@ -11,7 +11,6 @@ from ..py_graph_t.exceptions.SimpleGraphException import (
 from ..py_graph_t.Graph import Graph
 from ..py_graph_t.util.ValueBinding import ValueBinding
 
-
 class TestGraph:
     g = Graph()
 
