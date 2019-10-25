@@ -1,4 +1,5 @@
 [![Open Source Helpers](https://www.codetriage.com/rickecr/pygraph/badges/users.svg)](https://www.codetriage.com/rickecr/pygraph)
+[![Build Status](https://travis-ci.org/Rickecr/PyGraph.svg?branch=master)](https://travis-ci.org/Rickecr/PyGraph)
 
 # PyGraph
 > Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
