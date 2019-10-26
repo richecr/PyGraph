@@ -55,7 +55,9 @@ Calma, agora que entra o `Pull Request` ou `PR`
 
 ## Contribuir com implementação:
 
-Depois de ter realizado o fork e o clone do projeto, escolhido seu editor de texto favorito, nós amamos o VSCode, mas fique a vontade para escolher o seu.
+Depois de ter realizado o fork e o clone do projeto, escolhido seu editor de texto favorito, nós amamos o VSCode, mas fique a vontade para escolher o seu. Então é hora da codificação.
+
+Mas calma ai, antes de qualquer coisa, você deve escolher uma issue que pretender trabalhar. Se a issue que trata sobre a funcionalidade não existir, você deve criar e dizer que esta trabalhando nela, caso ela exista você deve dizer lá(caso não já tenha alguém) que pretende trabalhar na issue. E após feito isso, agora sim você está pronto para codificação.
 
 ### Entendendo as pastas:
 
@@ -65,7 +67,32 @@ O projeto se encontra na pasta `py_graph_t`, estamos aceitando dicas de nomes pa
 
 - Na pasta `vertex` : Encontra-se todos os arquivos sobre vértices de um grafo, todas as implementações de um vértice irão estar nessa pasta. Por exemplo, quando existir um grafo com vértices que possuem um dado a ser salvo, esse vértice será criado dentro dessa pasta, herdando da classe base de vértice(`SimpleVertex`).
 
-### Fazendo uma Pull Request
+### Depois de implementar sua solução/funcionalidade:
+
+Muito bem. Agora só falta uma coisinha para abrir sua PR e ela ser aceita, **Testes**. Muita gente não gosta, nós sabemos, mas são eles que garantem que todo nosso código esteja funcionando. Assim facilitando muito a vida dos desenvolvedores.
+
+#### Testes:
+
+Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela comunidade Python e bastante fácil de usar.
+
+- Primeiro você precisa instalar o pytest:
+
+    <code>$ pip3 install -U pytest❯ pytest --version</code>
+
+- Para testar se tudo funcionou bem, digite no terminal:
+
+    <code>$ pytest --version</code>
+
+    - Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
+
+    <code>This is pytest version 5.2.0, imported from /home/rickecr/.local/lib/python3.6/site-packages/pytest.py</code>
+
+E agora é só criar sua classe de teste, caso a classe de teste para a classe que você fez a funcionalidade ainda não exista.
+Você deve criar os testes para a(s) sua(s) funcionalidade(s), tentando pegar todos os casos extremos, sabemos que é dificil também.
+
+E após realizar os testes, você está pronto para realizar sua [PR](https://github.com/Rickecr/PyGraph/blob/master/CONTRIBUTING.md#realizando-uma-pull-request---pr) e ser feliz com o mundo OpenSource.
+
+## Realizando uma Pull Request - PR
 
 Na página do seu fork irá aparecer uma mensagem em amarelo solicitando que você faça uma Pull Request para o repositório original. Ao clicar irá abrir uma página para você preencher as informações sobre sua PR.
 
@@ -74,6 +101,3 @@ Na página do seu fork irá aparecer uma mensagem em amarelo solicitando que voc
 - Descreva suas modificações
 
 - Espere pela avaliação da sua PR, e pode ocorrer de pedimos algumas alterações a seres feitas
-
-
-
