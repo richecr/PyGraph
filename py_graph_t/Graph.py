@@ -98,7 +98,7 @@ class Graph:
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
-        
+
         self.edges.append(new_edge)
         return self.show_edge(value_a, value_b)
 
@@ -424,14 +424,15 @@ class Graph:
         Retorno:
         ----------
         adjacency_matrix: Dict
-            - Dicionario que representa o grafo no formato matriz de adjacência. 
+            - Dicionario que representa o grafo no formato
+            matriz de adjacência.
         """
         adjacency_matrix = dict()
         for value in self.vertices.keys():
             adjacency_matrix[value] = dict()
 
             for vertex in self.vertices.keys():
-                adjacency_matrix[value][vertex] = 0  
+                adjacency_matrix[value][vertex] = 0
 
         for edge in self.edges:
             value_a = edge.vertex_a.get_value()
