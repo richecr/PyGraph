@@ -98,11 +98,9 @@ class Graph:
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
-        if new_edge in self.edges:
-            raise EdgeDuplicatedException()
-        else:
-            self.edges.append(new_edge)
-            return self.show_edge(value_a, value_b)
+
+        self.edges.append(new_edge)
+        return self.show_edge(value_a, value_b)
 
     def delete_edge(self, value_a, value_b):
         """
@@ -417,6 +415,32 @@ class Graph:
                         ValueBinding(v.get_value(), e.get_name(), 0)
                     )
         return incidence_list
+
+    def adjacency_matrix(self):
+        """
+        Método que retorna a representação em forma de
+        matriz de adjacência do grafo.
+
+        Retorno:
+        ----------
+        adjacency_matrix: Dict
+            - Dicionario que representa o grafo no formato
+            matriz de adjacência.
+        """
+        adjacency_matrix = dict()
+        for value in self.vertices.keys():
+            adjacency_matrix[value] = dict()
+
+            for vertex in self.vertices.keys():
+                adjacency_matrix[value][vertex] = 0
+
+        for edge in self.edges:
+            value_a = edge.vertex_a.get_value()
+            value_b = edge.vertex_b.get_value()
+            adjacency_matrix[value_a][value_b] += 1
+            adjacency_matrix[value_b][value_a] += 1
+
+        return adjacency_matrix
 
     def __str__(self):
         """

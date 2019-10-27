@@ -36,7 +36,7 @@ class ValueBinding:
             return False
 
     def __repr__(self):
-        resullt = str(self.vertex_name) + " - "
-        resullt += str(self.edge_name) + " => "
-        resullt += str(self.value)
+        result = str(self.vertex_name) + " - "
+        result += str(self.edge_name) + " => "
+        result += str(self.value)
         return result
