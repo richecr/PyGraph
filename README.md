@@ -17,7 +17,7 @@
 
 - [Modelo para a comunidade editar](https://www.lucidchart.com/invitations/accept/ac0a364a-2154-4e72-a333-4c9f2cc71629)
 
-![Imgur](https://i.imgur.com/iI7QoJO.jpg)
+![Imgur](https://i.imgur.com/LB8yW6f.png)
 
 ## Como contribuir ? :smiley:
 
