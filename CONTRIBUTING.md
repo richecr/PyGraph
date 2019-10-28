@@ -34,10 +34,10 @@ Ao concluir, você terá o repositório em seu computador e então é só abrir 
 Ao terminar suas modificações, você deve commitar suas alterações, mas primeiro:
 
 ```sh
-git add .
+git add -p
 ```
 
-O comando acima irá preparar todos os arquivos modificados para serem commitados(você deve estar dentro da pasta do projeto para usar o comando). Agora é só commitar as alterações:
+O comando acima irá preparar todos os arquivos modificados para serem commitados, passando por todas as alterações que foram feitas por você onde decedirá se a alteração será adicionada (você deve estar dentro da pasta do projeto para usar o comando). Agora é só commitar as alterações:
 
 ```sh
 git commit -m "<Sua_Mensagem>"
@@ -76,16 +76,27 @@ Muito bem. Agora só falta uma coisinha para abrir sua PR e ela ser aceita, **Te
 Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela comunidade Python e bastante fácil de usar.
 
 - Primeiro você precisa instalar o pytest:
-
-    <code>$ pip3 install -U pytest❯ pytest --version</code>
-
+    <code>\
+    $ sudo apt-get install pipenv \
+    $ pipenv install
+    </code>
+    
 - Para testar se tudo funcionou bem, digite no terminal:
 
-    <code>$ pytest --version</code>
+    <code>$ pipenv run pytest --version</code>
 
-    - Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
+- Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
 
     <code>This is pytest version 5.2.0, imported from /home/rickecr/.local/lib/python3.6/site-packages/pytest.py</code>
+
+- Para execução da suite de testes basta executar:
+   
+   <code>$ pipenv run pytest</code>
+   
+- Para a execução dos testes no modo watch:
+
+  <code>$pipenv run ptw</code>
+  
 
 E agora é só criar sua classe de teste, caso a classe de teste para a classe que você fez a funcionalidade ainda não exista.
 Você deve criar os testes para a(s) sua(s) funcionalidade(s), tentando pegar todos os casos extremos, sabemos que é dificil também.
