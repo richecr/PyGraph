@@ -36,7 +36,6 @@ class TestGraph:
     def test_incidence_list_should_return_a_list(self, simple_graph):
         list_ = simple_graph.incidence_list()
         expected = True
-        print(len(list_))
         assert isinstance(list_, list) == expected
 
     def test_incidence_list_should_have_len_equal_number_edges_times_number_vertex(self, simple_graph):
@@ -45,3 +44,5 @@ class TestGraph:
         expected = vertices_len * edges_len
         result = len(simple_graph.incidence_list())
         assert expected == result
+
+
