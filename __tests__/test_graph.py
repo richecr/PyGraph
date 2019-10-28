@@ -44,5 +44,4 @@ class TestGraph:
         edges_len = len(simple_graph.edges)
         expected = vertices_len * edges_len
         result = len(simple_graph.incidence_list())
-        print(simple_graph.incidence_list())
-        assert expected == 3
+        assert expected == result
