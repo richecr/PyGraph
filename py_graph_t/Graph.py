@@ -4,7 +4,6 @@ from .util.ValueBinding import ValueBinding
 
 from .exceptions.SimpleGraphException import (
     VertexNotExistsException,
-    EdgeDuplicatedException,
     EdgeNotFoundException,
     VertexDuplicatedException
 )
