@@ -1,12 +1,9 @@
-from .vertex.SimpleVertex import SimpleVertex
 from .edges.SimpleEdge import SimpleEdge
 from .Graph import Graph
 
 from .exceptions.SimpleGraphException import (
     VertexNotExistsException,
     EdgeDuplicatedException,
-    EdgeNotFoundException,
-    VertexDuplicatedException,
     CycleDetectedException
 )
 
