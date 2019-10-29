@@ -77,7 +77,7 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
 
 - Primeiro você precisa instalar o pytest:
     <code>\
-    $ sudo apt-get install pipenv \
+    $ pip install --user pipenv \
     $ pipenv install
     </code>
     
@@ -95,7 +95,7 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
    
 - Para a execução dos testes no modo watch:
 
-  <code>$pipenv run ptw</code>
+  <code>$ pipenv run ptw</code>
   
 
 E agora é só criar sua classe de teste, caso a classe de teste para a classe que você fez a funcionalidade ainda não exista.
