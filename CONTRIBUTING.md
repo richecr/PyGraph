@@ -77,35 +77,39 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
 
 - Primeiro você precisa instalar o pytest:
 
-    <code>\
+    ~~~bash
     $ pip install --user pipenv
-
-    $ pipenv install
-    </code>
+    ~~~
     
+- Para instalar as dependências usadas no projeto:
+
+    ~~~bash
+    $ pipenv install
+    ~~~
+
 - Para testar se tudo funcionou bem, digite no terminal:
 
-    <code>
-        $ pipenv run pytest --version
-    </code>
+    ~~~bash
+    $ pipenv run pytest --version
+    ~~~
 
 - Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
 
-    <code>
-        $ This is pytest version 5.2.0, imported from /home/rickecr/.local/lib/python3.6/site-packages/pytest.py
-    </code>
+    ~~~bash
+    $ This is pytest version 5.2.0, imported from /home/rickecr/.local/lib/python3.6/site-packages/pytest.py
+    ~~~
 
 - Para execução da suite de testes basta executar:
    
-    <code>
-        $ pipenv run pytest
-    </code>
+    ~~~bash
+    $ pipenv run pytest
+    ~~~
    
 - Para a execução dos testes no modo watch:
 
-    <code>
-        $ pipenv run ptw
-    </code>
+    ~~~bash
+    $ pipenv run ptw
+    ~~~
   
 
 E agora é só criar sua classe de teste, caso a classe de teste para a classe que você fez a funcionalidade ainda não exista.
