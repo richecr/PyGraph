@@ -1,15 +1,9 @@
 import pytest
 
-from ..py_graph_t.SimpleGraph import SimpleGraph
-from ..py_graph_t.exceptions.SimpleGraphException import (
-    VertexNotExistsException,
-    EdgeDuplicatedException,
-    EdgeNotFoundException,
-    VertexDuplicatedException,
-    CycleDetectedException
-)
+
 from ..py_graph_t.Graph import Graph
 from ..py_graph_t.util.ValueBinding import ValueBinding
+
 
 @pytest.fixture
 def simple_graph():
@@ -38,11 +32,17 @@ class TestGraph:
         expected = True
         assert isinstance(list_, list) == expected
 
-    def test_incidence_list_should_have_len_equal_number_edges_times_number_vertex(self, simple_graph):
+    def test_incidence_list_length(self, simple_graph):
+        """
+        Testa o tamanho da linha.
+
+        Testar se o tamanho da lista será o resultado da multiplicação do
+        número de nós e vértices.
+        :param simple_graph:
+        :return:
+        """
         vertices_len = len(simple_graph.vertices)
         edges_len = len(simple_graph.edges)
         expected = vertices_len * edges_len
         result = len(simple_graph.incidence_list())
         assert expected == result
-
-
