@@ -64,9 +64,9 @@ class TestGraph:
         edges_b = edges[1]
         edges_c = edges[2]
 
-        assert edges_a["a"] == (2 if simple_graph.edge_exists("a","a") else 0)
-        assert edges_b["b"] == (2 if simple_graph.edge_exists("b","b") else 0)
-        assert edges_c["c"] == (2 if simple_graph.edge_exists("c","c") else 0)
+        assert edges_a["a"] == int(simple_graph.edge_exists("a","a"))*2
+        assert edges_b["b"] == int(simple_graph.edge_exists("b","b"))*2
+        assert edges_c["c"] == int(simple_graph.edge_exists("c","c"))*2
         assert edges_a["b"] == edges_b["a"]
         assert edges_a["c"] == edges_c["a"]
         assert edges_b["c"] == edges_c["b"]
