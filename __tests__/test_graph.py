@@ -46,3 +46,27 @@ class TestGraph:
         expected = vertices_len * edges_len
         result = len(simple_graph.incidence_list())
         assert expected == result
+
+    def test_adjacency_matrix_should_return_dict(self, simple_graph):
+        m = simple_graph.adjacency_matrix()
+        expected = True
+        assert isinstance(m, dict) == expected
+
+    def test_adjacency_matrix_get_correct_vertexes(self, simple_graph):
+        m = simple_graph.adjacency_matrix()
+        vertexes = m.keys()
+        assert list(vertexes) == ["a", "b", "c"]
+
+    def test_adjacency_matrix_get_correct_edges(self, simple_graph):
+        m = simple_graph.adjacency_matrix()
+        edges = list(m.values())
+        edges_a = edges[0]
+        edges_b = edges[1]
+        edges_c = edges[2]
+
+        assert edges_a["a"] == int(simple_graph.edge_exists("a", "a"))*2
+        assert edges_b["b"] == int(simple_graph.edge_exists("b", "b"))*2
+        assert edges_c["c"] == int(simple_graph.edge_exists("c", "c"))*2
+        assert edges_a["b"] == edges_b["a"]
+        assert edges_a["c"] == edges_c["a"]
+        assert edges_b["c"] == edges_c["b"]
