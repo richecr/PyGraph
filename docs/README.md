@@ -1,7 +1,16 @@
 # Documentação
+[Documentação](index.md) da biblioteca
 
-## Qual Objetivo da biblioteca ?
+## Qual objetivo da biblioteca ?
 
-## Como usar ?
+Visto que não possuem muitas bibliotecas desse ramo escritas em Python. O objetivo da biblioteca é permitir a fácil utilização dos algoritmos de Grafos.
 
 ## Quem somos ?
+
+Somos alunos da UFCG.
+
+- Rich Elton
+- Matheus Santana
+- José Davi
+- Eduardo Pereira
+- Yuri Souza

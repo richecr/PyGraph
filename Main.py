@@ -1,16 +1,29 @@
 from py_graph_t.Graph import Graph
+from py_graph_t.SimpleGraph import SimpleGraph
 
-g = Graph()
+g = SimpleGraph()
 
 g.add_vertex("a")
 g.add_vertex("b")
 g.add_vertex("c")
 
-g.add_edge("a", "b", name="s")
-g.add_edge("b", "c", name="t")
-g.add_edge("a", "a", name="d")
+g.add_edge("a", "b", name="1")
+g.add_edge("b", "c", name="2")
+g.add_edge("a", "a", name="3")
 
-i = g.incidence_list()
+
+print(g.__str__())
+# g = Graph()
+
+# g.add_vertex("a")
+# g.add_vertex("b")
+# g.add_vertex("c")
+
+# g.add_edge("a", "b", name="s")
+# g.add_edge("b", "c", name="t")
+# g.add_edge("a", "a", name="d")
+
+# i = g.incidence_list()
 print(i)
 print(g.__str__())
 '''
