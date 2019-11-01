@@ -46,9 +46,9 @@ class SimpleGraph(Graph):
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
-        
+
         if new_edge in self.edges:
             raise EdgeDuplicatedException()
-        
+
         self.edges.append(new_edge)
         return self.show_edge(value_a, value_b)
