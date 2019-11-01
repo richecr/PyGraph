@@ -4,7 +4,7 @@ from .Graph import Graph
 from .exceptions.SimpleGraphException import (
     VertexNotExistsException,
     EdgeDuplicatedException,
-    CycleDetectedException
+    LoopDetectedException
 )
 
 
@@ -36,18 +36,19 @@ class SimpleGraph(Graph):
         name: String
             - Nome da aresta do grafo.
         """
+
+        if value_a == value_b:
+            raise LoopDetectedException()
+
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
         new_edge = SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b)
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
+
         if new_edge in self.edges:
             raise EdgeDuplicatedException()
-        else:
-            self.edges.append(new_edge)
-            if self.has_loop():
-                self.edges.remove(new_edge)
-                raise CycleDetectedException()
-            else:
-                return self.show_edge(value_a, value_b)
+
+        self.edges.append(new_edge)
+        return self.show_edge(value_a, value_b)

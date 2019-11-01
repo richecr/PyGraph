@@ -21,3 +21,8 @@ class VertexDuplicatedException(Exception):
 class CycleDetectedException(Exception):
     def __str__(self):
         return "Esse tipo de grafo não pode conter ciclo"
+
+
+class LoopDetectedException(Exception):
+    def __str__(self):
+        return "Esse tipo de grafo não pode conter loops"
