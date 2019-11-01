@@ -346,13 +346,14 @@ class Graph:
                     return True
         return False
 
-    def has_loop(self):
+    def has_cycle(self):
         """
-        Método que verifica se o grafo possui um loop/ciclo.
+        Método que verifica se o grafo possui um ciclo.
+        Loops também são detectados.
 
         Retorno:
         ----------
-        True: se gráfo possuir loop/ciclo.
+        True: se gráfo possuir ciclo ou loop.
 
         False: caso nao possua.
         """
@@ -365,6 +366,21 @@ class Graph:
             if visited[i] is False:
                 if(self.cycle(i, visited, -1)) is True:
                     return True
+        return False
+
+    def has_loop(self):
+        """
+        Método que verifica se o grafo possui um loop.
+
+        Retorno:
+        ----------
+        True: se gráfo possuir loop.
+
+        False: caso nao possua.
+        """
+        for edge in self.edges:
+            if edge.is_loop():
+                return True
         return False
 
     def check_regular_graph(self):

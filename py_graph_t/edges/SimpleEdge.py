@@ -15,6 +15,13 @@ class SimpleEdge(object):
     def get_name(self):
         return self.name
 
+    def is_loop(self):
+        """
+        Método para verificar se aresta representa um loop.
+        Um loop é uma aresta que conecta um vértice a ele mesmo.
+        """
+        return self.vertex_a == self.vertex_b
+
     def __eq__(self, other):
         """
         Método para comparação de duas arestas

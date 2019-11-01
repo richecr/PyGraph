@@ -81,16 +81,23 @@ class TestSimpleGraph:
         assert str(self.graph.show_edge('a', 'b')) == \
             str('ab: Vértice a -> Vértice b')
 
-    def test_true_loop_graph(self):
+    def test_true_cycle_graph(self):
         self.graph.add_vertex("c")
         self.graph.add_edge("b", "c", 2)
         self.graph.add_edge("c", "a", 3)
-        assert self.graph.has_loop() is True
+        assert self.graph.has_cycle() is True
+        assert self.graph.has_loop() is False
 
-    def test_false_loop_graph(self):
+    def test_false_cycle_graph(self):
         self.graph.delete_edge("c", "a")
         self.graph.add_vertex("d")
         self.graph.add_edge("c", "d", 3)
+        assert self.graph.has_cycle() is False
+        assert self.graph.has_loop() is False
+
+    def test_loop(self):
+        with pytest.raises(LoopDetectedException):
+            assert self.graph.add_edge("d", "d")
         assert self.graph.has_loop() is False
 
     def test_true_regular_graph(self):
@@ -111,8 +118,3 @@ class TestSimpleGraph:
     def test_duplicated_edge(self):
         with pytest.raises(EdgeDuplicatedException):
             assert self.graph.add_edge("b", "c")
-
-    def test_loop(self):
-        self.graph.add_vertex("e")
-        with pytest.raises(LoopDetectedException):
-            assert self.graph.add_edge("e", "e")
