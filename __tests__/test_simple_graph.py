@@ -2,7 +2,8 @@ import pytest
 
 from ..py_graph_t.SimpleGraph import SimpleGraph
 from ..py_graph_t.exceptions.SimpleGraphException import (
-    CycleDetectedException
+    EdgeDuplicatedException,
+    LoopDetectedException
 )
 
 
@@ -83,11 +84,11 @@ class TestSimpleGraph:
     def test_true_loop_graph(self):
         self.graph.add_vertex("c")
         self.graph.add_edge("b", "c", 2)
-        with pytest.raises(CycleDetectedException) as e:
-            assert self.graph.add_edge("c", "a", 3)
-        assert str(e.value) == "Esse tipo de grafo não pode conter ciclo"
+        self.graph.add_edge("c", "a", 3)
+        assert self.graph.has_loop() is True
 
     def test_false_loop_graph(self):
+        self.graph.delete_edge("c", "a")
         self.graph.add_vertex("d")
         self.graph.add_edge("c", "d", 3)
         assert self.graph.has_loop() is False
@@ -106,3 +107,12 @@ class TestSimpleGraph:
     def test_false_regular_graph(self):
         self.graph.add_edge("b", "c", 3)
         assert self.graph.check_regular_graph() is False
+
+    def test_duplicated_edge(self):
+        with pytest.raises(EdgeDuplicatedException):
+            assert self.graph.add_edge("b", "c")
+
+    def test_loop(self):
+        self.graph.add_vertex("e")
+        with pytest.raises(LoopDetectedException):
+            assert self.graph.add_edge("e", "e")
