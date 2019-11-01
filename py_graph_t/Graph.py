@@ -294,7 +294,8 @@ class Graph:
 
         Retorno:
         ----------
-        vertices: lista com o nome de todas os vértices do grafo.
+        vertices: List
+            - Lista com o nome de todas os vértices do grafo.
         """
         vertices = []
         for vertex in self.vertices:
@@ -308,7 +309,8 @@ class Graph:
 
         Retorno:
         ----------
-        edges: lista com o nome de todas as arestas do grafo.
+        edges: List
+            - Lista com o nome de todas as arestas do grafo.
         """
         edges = []
         for edge in self.edges:
@@ -385,7 +387,7 @@ class Graph:
 
     def check_regular_graph(self):
         """
-        Função que verifica a regularidade de um grafo.
+        Método que verifica a regularidade de um grafo.
 
         Retorno:
         ----------
