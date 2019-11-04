@@ -1,8 +1,8 @@
 # Sumário:
 
-- [Grafos](#Grafos)
-- [Arestas](#Arestas)
-- [Vértices](#Vértices)
+- [Grafos](#grafos)
+- [Arestas](#arestas)
+- [Vértices](#vértices)
 
 ## Grafos:
 > Os grafos implementados na biblioteca.

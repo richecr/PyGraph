@@ -7,29 +7,29 @@ Esse grafo não possui nenhum tipo de restrição. Pois todos os outros grafos i
 
 | Método | Parâmetros | O que faz ? | Retorno |
 ----------------- | ---------- | --------- |--------- |
-| [add_vertex](#Adicionar-um-vértice)       |   value    |  Método que adiciona um vértice ao grafo.       | SimpleVertex adicionado |
-| [delete_vertex](#Deletar-um-vértice) | value | Método que remove um vertice do grafo e consequentemente todas as arestas conectadas ao vertice.  | SimpleVertex removido  |
-| [add_edge](#Adicionar-uma-aresta)  | value_a, value_b, name(opcional)  | Método que adiciona uma aresta ao grafo.  | SimpleEdge adicionado. |
-| [delete_edge](#Deletar-uma-aresta)   | value_a, value_b  | Método que remove uma aresta do grafo.    | SimpleEdge removido.    |
-| [show_edge](#Visualizar-aresta) | value_a, value_b   | Método que retorna uma aresta entre dois vértices, se ela existe.  | SimpleEdge.  |
-| [is_terminal](#Verificar-se-um-vértice-é-terminal-de-uma-aresta)   | edge, value   | Método que verifica se um dado vértice é terminal de uma dada aresta.  | Boolean  |
-| [num_vertex](#Número-de-vértices) | ---   | Método que retorna o número de vértices no grafo.  | Integer  |
-| [num_edges](#Número-de-arestas) | ---   | Método que retorna o número de arestas no grafo.  | Integer  |
-| [vertex_exists](#Verifica-se-um-vértice-existe) | value   | Método que indica se um determinado vértice pertence ao Grafo.  | Boolean  |
-| [edge_exists](#Verifica-se-uma-aresta-existe) | value_a, value_b   | Método que indica se uma determinada aresta pertence ao Grafo.  | Boolean  |
-| [vertex_neighbors](#Vizinhos-de-um-vértice) | value   | Método que encontra vertices vizinhos do vertice de entrada.  | List  |
-| [vertex_degree](#Grau-do-vértice) | value   | Método que retorna o grau do vértice de entrada.  | Integer  |
-| [is_vertices_adjacents](#Verifica-se-os-vértices-são-adjacentes) | value_a, value_b   | Método que indica se os vértices de entrada são adjacentes.  | Boolean  |
-| [get_all_vertex](#Lista-dos-vértices-do-grafo) | ---   | Método que retorna uma lista com os vértices do grafo.  | List  |
-| [list_graph_vertices](#Lista-com-todos-os-identificadores-dos-vértices) | ---   | Método que retorna lista com todos os identificadores dos vértices do grafo.  | List   |
-| [list_graph_edges](#Lista-com-os-nomes-das-arestas) | ---   | Método que retorna lista com todos os nomes as arestas do grafo.   | List  |
+| [add_vertex](#adicionar-um-vértice)       |   value    |  Método que adiciona um vértice ao grafo.       | SimpleVertex adicionado |
+| [delete_vertex](#deletar-um-vértice) | value | Método que remove um vertice do grafo e consequentemente todas as arestas conectadas ao vertice.  | SimpleVertex removido  |
+| [add_edge](#adicionar-uma-aresta)  | value_a, value_b, name(opcional)  | Método que adiciona uma aresta ao grafo.  | SimpleEdge adicionado. |
+| [delete_edge](#deletar-uma-aresta)   | value_a, value_b  | Método que remove uma aresta do grafo.    | SimpleEdge removido.    |
+| [show_edge](#visualizar-aresta) | value_a, value_b   | Método que retorna uma aresta entre dois vértices, se ela existe.  | SimpleEdge.  |
+| [is_terminal](#verificar-se-um-vértice-é-terminal-de-uma-aresta)   | edge, value   | Método que verifica se um dado vértice é terminal de uma dada aresta.  | Boolean  |
+| [num_vertex](#número-de-vértices) | ---   | Método que retorna o número de vértices no grafo.  | Integer  |
+| [num_edges](#número-de-arestas) | ---   | Método que retorna o número de arestas no grafo.  | Integer  |
+| [vertex_exists](#verifica-se-um-vértice-existe) | value   | Método que indica se um determinado vértice pertence ao Grafo.  | Boolean  |
+| [edge_exists](#verifica-se-uma-aresta-existe) | value_a, value_b   | Método que indica se uma determinada aresta pertence ao Grafo.  | Boolean  |
+| [vertex_neighbors](#vizinhos-de-um-vértice) | value   | Método que encontra vertices vizinhos do vertice de entrada.  | List  |
+| [vertex_degree](#grau-do-vértice) | value   | Método que retorna o grau do vértice de entrada.  | Integer  |
+| [is_vertices_adjacents](#verifica-se-os-vértices-são-adjacentes) | value_a, value_b   | Método que indica se os vértices de entrada são adjacentes.  | Boolean  |
+| [get_all_vertex](#lista-dos-vértices-do-grafo) | ---   | Método que retorna uma lista com os vértices do grafo.  | List  |
+| [list_graph_vertices](#lista-com-todos-os-identificadores-dos-vértices) | ---   | Método que retorna lista com todos os identificadores dos vértices do grafo.  | List   |
+| [list_graph_edges](#lista-com-os-nomes-das-arestas) | ---   | Método que retorna lista com todos os nomes as arestas do grafo.   | List  |
 |[cycle]() | v, visited, parent   | Método que verifica se tem ciclo no subgrafo a partir do vértice v.   | Boolean  |
-|[has_cycle](#Verifica-se-um-grafo-possui-ciclos,-loops-também-são-detectados) | ---   | Método que verifica se o grafo possui um ciclo. Loops também são detectados.  | Boolean  |
-|[has_loop](#Verifica-se-um-grafo-possui-um-loop) | ---   | Método que verifica se o grafo possui um loop.  | Boolean  |
-|[check_regular_graph](#Verifica-a-regularidade-de-um-grafo) | ---   | Método que verifica a regularidade de um grafo.  | Boolean  |
-|[incidence_list](#Incidência-de-um-grafo) | ---   | Método que retorna uma lista de objetos que contem a incidencia dos vertices com as arestas.  | List<ValueBinding>  |
-|[adjacency_matrix](#Adjacência-de-um-grafo) | ---   | Método que retorna a representação em forma de matriz de adjacência do grafo.  | Dict  |
-|[`__str__`](#Representação-textual) | ---   | Método que retorna a representação textual do grafo.  | String  |
+|[has_cycle](#verifica-se-um-grafo-possui-ciclos,-loops-também-são-detectados) | ---   | Método que verifica se o grafo possui um ciclo. Loops também são detectados.  | Boolean  |
+|[has_loop](#verifica-se-um-grafo-possui-um-loop) | ---   | Método que verifica se o grafo possui um loop.  | Boolean  |
+|[check_regular_graph](#verifica-a-regularidade-de-um-grafo) | ---   | Método que verifica a regularidade de um grafo.  | Boolean  |
+|[incidence_list](#incidência-de-um-grafo) | ---   | Método que retorna uma lista de objetos que contem a incidencia dos vertices com as arestas.  | List<ValueBinding>  |
+|[adjacency_matrix](#adjacência-de-um-grafo) | ---   | Método que retorna a representação em forma de matriz de adjacência do grafo.  | Dict  |
+|[`__str__`](#representação-textual) | ---   | Método que retorna a representação textual do grafo.  | String  |
 
 
 ## Exemplos de uso:
