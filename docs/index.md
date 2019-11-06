@@ -5,7 +5,7 @@
 - [Vértices](#vértices)
 
 ## Grafos:
-> Os grafos implementados na biblioteca.
+Os grafos implementados na biblioteca.
 
 - [Graph](graphs/graph.md) - Grafo base.
 - [SimpleGraph](graphs/simple_graph.md) - Grafo Simples.
@@ -13,12 +13,12 @@
 - [WeightedGraph](graphs/weighted_graph.md) - Grafo Ponderado.
 
 ## Arestas:
-> As arestas implementadas na biblioteca para serem usadas pelos grafos.
+As arestas implementadas na biblioteca para serem usadas pelos grafos.
 
 - [SimpleEdge](edges/simple_edge.md) - Aresta Simples
 - [WeightedEdge](edges/weighted_edge.md) - Aresta Ponderada
 
 ## Vértices:
-> Os vértices implementados na bibliotecas para serem utilizados pelas arestas e grafos.
+Os vértices implementados na bibliotecas para serem utilizados pelas arestas e grafos.
 
 - [SimpleVertex](vertices/simple_vertex.md) - Vértice Simples

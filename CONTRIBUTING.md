@@ -112,10 +112,52 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
     ~~~
   
 
-E agora é só criar sua classe de teste, caso a classe de teste para a classe que você fez a funcionalidade ainda não exista.
+E agora é só criar sua classe de teste, caso ela não exista para a classe que você fez a funcionalidade.
 Você deve criar os testes para a(s) sua(s) funcionalidade(s), tentando pegar todos os casos extremos, sabemos que é dificil também.
 
+E suas alterações devem garantir que os outros testes continuem funcionando, a não ser que você tenha achado um problema no
+código, algo que não deveria acontecer.
+
 E após realizar os testes, você está pronto para realizar sua [PR](https://github.com/Rickecr/PyGraph/blob/master/CONTRIBUTING.md#realizando-uma-pull-request---pr) e ser feliz com o mundo OpenSource.
+
+
+### Entrando nos padrões:
+
+Nós optamos por seguir o padrão da [PEP 8](https://www.python.org/dev/peps/pep-0008/). Portanto, seu código não deve violar nenhuma regra da mesma. Para verificar isso, usamos o `pycodestyle`.
+
+#### Pycodestyle:
+
+Nós usamos o pipenv para gerenciar nossas dependências.
+
+- Primeiro você precisa instalar o pipenv:
+
+    ~~~bash
+    $ pip install --user pipenv
+    ~~~
+    
+- Para instalar as dependências usadas no projeto:
+
+    ~~~bash
+    $ pipenv install
+    ~~~
+
+- Para testar se tudo funcionou bem, digite no terminal:
+
+    ~~~bash
+    $ pipenv run pytest --version
+    ~~~
+
+- Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
+
+    ~~~bash
+    $ This is pytest version 5.2.0, imported from /home/rickecr/.local/lib/python3.6/site-packages/pytest.py
+    ~~~
+
+- Para executar o pycodestyle:
+    
+    ~~~bash
+    pycodestyle .
+    ~~~
 
 ## Realizando uma Pull Request - PR
 

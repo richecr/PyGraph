@@ -26,7 +26,8 @@
 
 - PRs são aceitas!
 - Se você pensou em uma feature legal ou descobriu algum bug e não tem tempo para codificar, abra uma issue.
-- Nós seguimos as diretrizes do [PEP 8](https://www.python.org/dev/peps/pep-0008/). Portanto, antes de fazer uma PR verifique se seu código obedece os padrões do PEP 8.
+- Nós seguimos as diretrizes do [PEP 8](https://www.python.org/dev/peps/pep-0008/). Portanto, antes de fazer uma PR verifique se seu código obedece os padrões do PEP 8(pycodestyle).
+- Execute os testes antes de enviar sua PR(pytest).
 - Sempre documente seu código.
 - Para mais detalhes sobre como contribuir, acesse o [CONTRIBUTING.md](CONTRIBUTING.md).
 
