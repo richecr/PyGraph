@@ -1,24 +1,20 @@
-# Sumário:
+# Informações
+[Documentação](star.md) da biblioteca
 
-- [Grafos](#grafos)
-- [Arestas](#arestas)
-- [Vértices](#vértices)
+## Qual objetivo da biblioteca ?
 
-## Grafos:
-Os grafos implementados na biblioteca.
+O objetivo é a criação de uma biblioteca que facilite o uso de conceitos de Teoria dos Grafos.
 
-- [Graph](graphs/graph.md) - Grafo base.
-- [SimpleGraph](graphs/simple_graph.md) - Grafo Simples.
-- [CompleteGraph](graphs/complete_graph.md) - Grafo Completo.
-- [WeightedGraph](graphs/weighted_graph.md) - Grafo Ponderado.
+Já que não possuem muitas bibliotecas desse ramo escritas em Python. O objetivo da biblioteca é permitir a fácil utilização dos algoritmos de Grafos.
 
-## Arestas:
-As arestas implementadas na biblioteca para serem usadas pelos grafos.
+Também tem objetivo de fazer com que estudantes contribuam e apliquem seus conhecimentos de Teoria dos Grafos.
 
-- [SimpleEdge](edges/simple_edge.md) - Aresta Simples
-- [WeightedEdge](edges/weighted_edge.md) - Aresta Ponderada
+## Quem somos ?
 
-## Vértices:
-Os vértices implementados na bibliotecas para serem utilizados pelas arestas e grafos.
+Somos alunos da UFCG.
 
-- [SimpleVertex](vertices/simple_vertex.md) - Vértice Simples
+- [Rich Elton](https://github.com/Rickecr)
+- [Matheus Santana](https://github.com/mathsantana)
+- [José Davi](https://github.com/JoseDavi)
+- [Eduardo Pereira](https://github.com/Eduardoccufcg)
+- [Yuri Souza](https://github.com/yuri-s-s)
