@@ -23,8 +23,8 @@ Esse grafo não possui nenhum tipo de restrição. Pois todos os outros grafos i
 | [get_all_vertex](#lista-dos-vértices-do-grafo) | ---   | Método que retorna uma lista com os vértices do grafo.  | List  |
 | [list_graph_vertices](#lista-com-todos-os-identificadores-dos-vértices) | ---   | Método que retorna lista com todos os identificadores dos vértices do grafo.  | List   |
 | [list_graph_edges](#lista-com-os-nomes-das-arestas) | ---   | Método que retorna lista com todos os nomes as arestas do grafo.   | List  |
-|[cycle]() | v, visited, parent   | Método que verifica se tem ciclo no subgrafo a partir do vértice v.   | Boolean  |
-|[has_cycle](#verifica-se-um-grafo-possui-ciclos,-loops-também-são-detectados) | ---   | Método que verifica se o grafo possui um ciclo. Loops também são detectados.  | Boolean  |
+|[cycle](#) | v, visited, parent   | Método que verifica se tem ciclo no subgrafo a partir do vértice v.   | Boolean  |
+|[has_cycle](#verifica-se-um-grafo-possui-ciclos-loops-também-são-detectados) | ---   | Método que verifica se o grafo possui um ciclo. Loops também são detectados.  | Boolean  |
 |[has_loop](#verifica-se-um-grafo-possui-um-loop) | ---   | Método que verifica se o grafo possui um loop.  | Boolean  |
 |[check_regular_graph](#verifica-a-regularidade-de-um-grafo) | ---   | Método que verifica a regularidade de um grafo.  | Boolean  |
 |[incidence_list](#incidência-de-um-grafo) | ---   | Método que retorna uma lista de objetos que contem a incidencia dos vertices com as arestas.  | List<ValueBinding>  |
