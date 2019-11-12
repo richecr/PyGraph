@@ -44,15 +44,17 @@ class Graph:
         value:
             - Identificador do vértice a ser removido
         """
-        vertex_removed = self.vertices[value]
         if self.vertex_exists(value):
+            vertex_removed = self.vertices[value]
             for i in range(len(self.edges)-1, -1, -1):
                 edge = self.edges[i]
                 if self.is_terminal(edge, value):
                     self.edges.pop(i)
 
             self.vertices.__delitem__(value)
-        return vertex_removed
+            return vertex_removed
+        else:
+            raise VertexNotExistsException()
 
     def show_edge(self, value_a, value_b):
         """
@@ -74,9 +76,15 @@ class Graph:
 
         edge_test = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
 
+        edge_out = None
         for edge in self.edges:
             if edge_test.__eq__(edge):
-                return edge
+                edge_out = edge
+
+        if edge_out is None:
+            raise EdgeNotFoundException()
+
+        return edge_out
 
     def add_edge(self, value_a, value_b, name=None):
         """
@@ -114,15 +122,17 @@ class Graph:
         """
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
-        print(str(value_a))
-        print(str(value_b))
         edge_aux = SimpleEdge(vertex_a=vertex_a, vertex_b=vertex_b)
 
+        edge_out = None
         if self.edges.__contains__(edge_aux):
+            index = self.edges.index(edge_aux)
+            edge_out = self.edges[index]
             self.edges.remove(edge_aux)
-            return edge_aux
         else:
             raise EdgeNotFoundException()
+
+        return edge_out
 
     def is_terminal(self, edge, value):
         """
@@ -224,14 +234,16 @@ class Graph:
         neigh_vertices: List
             - Lista de vertices.
         """
-        neigh_vertices = []
-
-        for edge in self.edges:
-            if edge.vertex_a.value == value:
-                neigh_vertices.append(edge.vertex_b)
-            elif edge.vertex_b.value == value:
-                neigh_vertices.append(edge.vertex_a)
-        return neigh_vertices
+        if self.vertex_exists(value):
+            neigh_vertices = []
+            for edge in self.edges:
+                if edge.vertex_a.value == value:
+                    neigh_vertices.append(edge.vertex_b)
+                elif edge.vertex_b.value == value:
+                    neigh_vertices.append(edge.vertex_a)
+            return neigh_vertices
+        else:
+            raise VertexNotExistsException()
 
     def vertex_degree(self, value):
         """
