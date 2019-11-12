@@ -80,10 +80,10 @@ class Graph:
         for edge in self.edges:
             if edge_test.__eq__(edge):
                 edge_out = edge
-        
+
         if edge_out is None:
             raise EdgeNotFoundException()
-        
+
         return edge_out
 
     def add_edge(self, value_a, value_b, name=None):

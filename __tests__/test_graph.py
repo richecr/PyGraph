@@ -10,6 +10,7 @@ from ..py_graph_t.exceptions.SimpleGraphException import (
     EdgeNotFoundException
 )
 
+
 @pytest.fixture
 def simple_graph():
     g = Graph()
@@ -29,7 +30,7 @@ class TestGraph:
 
     def test_add_vertex(self, simple_graph):
         simple_graph.add_vertex("e")
-        assert simple_graph.vertex_exists("e") == True
+        assert simple_graph.vertex_exists("e") is True
         assert "e" in simple_graph.get_all_vertex().keys()
 
     def test_exception_add_vertex_duplicate(self, simple_graph):
@@ -73,13 +74,15 @@ class TestGraph:
     def test_add_edge(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
         vertex_x = simple_graph.add_vertex("x")
-        assert simple_graph.add_edge("z", "x", "zx") == SimpleEdge("zx", vertex_z, vertex_x)
+        assert simple_graph.add_edge("z", "x", "zx") == \
+            SimpleEdge("zx", vertex_z, vertex_x)
 
     def test_exception_add_edge_vertex_not_exists(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
         vertex_x = SimpleVertex("x")
         with pytest.raises(VertexNotExistsException):
-            assert simple_graph.add_edge("z", "x", "zx") == SimpleEdge("zx", vertex_z, vertex_x)
+            assert simple_graph.add_edge("z", "x", "zx") == \
+                SimpleEdge("zx", vertex_z, vertex_x)
 
     def test_delete_edge(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
@@ -103,9 +106,9 @@ class TestGraph:
         vertex_z = simple_graph.add_vertex("z")
         vertex_x = simple_graph.add_vertex("x")
         edge_test = simple_graph.add_edge("z", "x", "zx")
-        assert simple_graph.is_terminal(edge_test, "z") == True
-        assert simple_graph.is_terminal(edge_test, "x") == True
-        assert simple_graph.is_terminal(edge_test, "a") == False
+        assert simple_graph.is_terminal(edge_test, "z") is True
+        assert simple_graph.is_terminal(edge_test, "x") is True
+        assert simple_graph.is_terminal(edge_test, "a") is False
 
     def test_num_vertex(self, simple_graph):
         assert simple_graph.num_vertex() == 3
@@ -118,19 +121,19 @@ class TestGraph:
 
     def test_vertex_exists(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
-        assert simple_graph.vertex_exists("a") == True
-        assert simple_graph.vertex_exists("z") == True
-        assert simple_graph.vertex_exists("x") == False
+        assert simple_graph.vertex_exists("a") is True
+        assert simple_graph.vertex_exists("z") is True
+        assert simple_graph.vertex_exists("x") is False
 
     def test_edge_exists(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
         vertex_x = simple_graph.add_vertex("x")
         edge_test = simple_graph.add_edge("z", "x", "zx")
-        assert simple_graph.edge_exists("z", "x") == True
+        assert simple_graph.edge_exists("z", "x") is True
 
     def test_edge_not_exists(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
-        assert simple_graph.edge_exists("z", "a") == False
+        assert simple_graph.edge_exists("z", "a") is False
 
     def test_num_edges(self, simple_graph):
         assert simple_graph.num_edges() == 3
@@ -161,10 +164,10 @@ class TestGraph:
     def test_is_vertices_adjacents(self, simple_graph):
         vertex_z = simple_graph.add_vertex("z")
         vertex_x = simple_graph.add_vertex("x")
-        assert simple_graph.is_vertices_adjacents("a", "b") == True
-        assert simple_graph.is_vertices_adjacents("z", "x") == False
+        assert simple_graph.is_vertices_adjacents("a", "b") is True
+        assert simple_graph.is_vertices_adjacents("z", "x") is False
 
-    def test_exception_is_vertices_adjacents_vertex_not_exists(self, simple_graph):
+    def test_exception_is_vertices_adjacents_not_exists(self, simple_graph):
         vertex_x = simple_graph.add_vertex("x")
         with pytest.raises(VertexNotExistsException):
             assert simple_graph.is_vertices_adjacents("z", "x")
@@ -191,25 +194,22 @@ class TestGraph:
         simple_graph.add_edge("z", "x", "zx")
         simple_graph.add_edge("z", "a", "za")
         simple_graph.add_edge("a", "x", "ax")
-        assert simple_graph.has_cycle() == True
+        assert simple_graph.has_cycle() is True
 
     def test_has_cycle_simples(self, simple_graph):
-        assert simple_graph.has_cycle() == True
+        assert simple_graph.has_cycle() is True
         simple_graph.delete_edge("a", "a")
-        assert simple_graph.has_cycle() == False
+        assert simple_graph.has_cycle() is False
 
     def test_has_loop(self, simple_graph):
-        assert simple_graph.has_loop() == True
+        assert simple_graph.has_loop() is True
         simple_graph.delete_edge("a", "a")
-        assert simple_graph.has_cycle() == False
-
-    def test_add_edge(self, simple_graph):
-        assert True == True 
+        assert simple_graph.has_cycle() is False
 
     def test_check_regular_graph(self, simple_graph):
         simple_graph.delete_edge("a", "a")
         simple_graph.add_edge("c", "a", "ca")
-        assert simple_graph.check_regular_graph() == True
+        assert simple_graph.check_regular_graph() is True
 
     def test_incidence_list(self, simple_graph):
         vb1 = ValueBinding("a", "s", 1)
