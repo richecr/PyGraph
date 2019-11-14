@@ -1,5 +1,5 @@
 # Informações
-[Documentação](star.md) da biblioteca
+[Documentação](start.md) da biblioteca
 
 ## Qual objetivo da biblioteca ?
 
