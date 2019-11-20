@@ -7,7 +7,8 @@ from ..py_graph_t.vertex.SimpleVertex import SimpleVertex
 from ..py_graph_t.exceptions.SimpleGraphException import (
     VertexDuplicatedException,
     VertexNotExistsException,
-    EdgeNotFoundException
+    EdgeNotFoundException,
+    EdgeNameExistsException
 )
 
 
@@ -82,6 +83,13 @@ class TestGraph:
         vertex_x = SimpleVertex("x")
         with pytest.raises(VertexNotExistsException):
             assert simple_graph.add_edge("z", "x", "zx") == \
+                SimpleEdge("zx", vertex_z, vertex_x)
+
+    def test_exception_add_edge_name_exists(self, simple_graph):
+        vertex_z = simple_graph.add_vertex("z")
+        vertex_x = simple_graph.add_vertex("x")
+        with pytest.raises(EdgeNameExistsException):
+            assert simple_graph.add_edge("z", "x", "d") == \
                 SimpleEdge("zx", vertex_z, vertex_x)
 
     def test_delete_edge(self, simple_graph):

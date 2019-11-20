@@ -5,7 +5,8 @@ from .util.ValueBinding import ValueBinding
 from .exceptions.SimpleGraphException import (
     VertexNotExistsException,
     EdgeNotFoundException,
-    VertexDuplicatedException
+    VertexDuplicatedException,
+    EdgeNameExistsException
 )
 
 
@@ -101,13 +102,23 @@ class Graph:
         """
         vertex_a = self.vertices.get(value_a)
         vertex_b = self.vertices.get(value_b)
-        new_edge = SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b)
 
         if vertex_a is None or vertex_b is None:
             raise VertexNotExistsException()
 
+        if self.edge_name_exists(name):
+            raise EdgeNameExistsException()
+
+        new_edge = SimpleEdge(name=name, vertex_a=vertex_a, vertex_b=vertex_b)
+
         self.edges.append(new_edge)
         return self.show_edge(value_a, value_b)
+
+    def edge_name_exists(self, name):
+        for edge in self.edges:
+            if edge.get_name() == name:
+                return True
+        return False
 
     def delete_edge(self, value_a, value_b):
         """

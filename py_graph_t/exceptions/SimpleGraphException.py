@@ -26,3 +26,8 @@ class CycleDetectedException(Exception):
 class LoopDetectedException(Exception):
     def __str__(self):
         return "Esse tipo de grafo não pode conter loops"
+
+
+class EdgeNameExistsException(Exception):
+    def __str__(self):
+        return "Aresta com esse nome já existe"
