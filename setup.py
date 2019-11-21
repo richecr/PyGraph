@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='PyGraphT',
-    version='0.1.4',
+    version='0.1.0',
     author='Rich Elton',
     author_email='richelton14@gmail.com',
     description='Biblioteca com intuito de implementar os grafos e seus \
