@@ -1,0 +1,1 @@
+from .SimpleGraphException import *
