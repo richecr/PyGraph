@@ -12,10 +12,10 @@ from .exceptions.SimpleGraphException import (
 
 class Graph:
     """Implementação de um grafo base."""
-    vertices = dict()
-    edges = []
 
     def __init__(self):
+        self.vertices = dict()
+        self.edges = []
         pass
 
     def add_vertex(self, value):
