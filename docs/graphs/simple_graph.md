@@ -8,6 +8,12 @@ Restrições que esse tipo de grafo possui:
 
 Nessa implementação as arestas *não tem pesos*.
 
+## Importar:
+
+```python3
+from py_graph_t import SimpleGraph
+```
+
 ## Métodos:
 
 Possui todos os métodos do [Graph](#graph.md), mas como tem restrições específicas foi necessário sobrescrever alguns métodos.

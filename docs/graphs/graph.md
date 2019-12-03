@@ -3,6 +3,12 @@ Esse é o grafo que todos os outros grafos vão herdar suas características/mé
 
 Esse grafo não possui nenhum tipo de restrição. Pois todos os outros grafos irão sobrescrever os métodos necessários para aplicar suas restrições.
 
+## Importar:
+
+```python3
+from py_graph_t import Graph
+```
+
 ## Métodos:
 
 | Método | Parâmetros | O que faz ? | Retorno |

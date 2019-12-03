@@ -7,6 +7,12 @@ Restrições que esse tipo de grafo possue:
 
 Nessa implementação as arestas *não tem pesos*.
 
+## Importar:
+
+```python3
+from py_graph_t import CompleteGraph
+```
+
 ## Métodos:
 
 Possui todos os métodos do [Graph](graph.md#grafo-base), mas como tem restrições específicas foi necessário sobrescrever alguns métodos.

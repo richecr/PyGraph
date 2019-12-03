@@ -1,5 +1,7 @@
 # Informações
-[Documentação](start.md) da biblioteca
+
+- [Documentação](start.md) da biblioteca.
+- [PyGraphT - PYPI](https://pypi.org/project/PyGraphT/)
 
 ## Qual objetivo da biblioteca ?
 

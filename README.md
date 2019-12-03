@@ -7,6 +7,8 @@
 # [PyGraph](https://rickecr.github.io/PyGraph/)
 > Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
 
+- [PyGraphT - PYPI](https://pypi.org/project/PyGraphT/)
+
 ## Objetivo:
 > O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafos.
 

@@ -1,8 +1,15 @@
 # Sumário:
 
+- [Instalar](#instalacao)
 - [Grafos](#grafos)
 - [Arestas](#arestas)
 - [Vértices](#vértices)
+
+## Instalar:
+
+```bash
+pip3 install PyGraphT
+```
 
 ## Grafos:
 Os grafos implementados na biblioteca.
