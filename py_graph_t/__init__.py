@@ -1,3 +1,3 @@
 from .Graph import Graph
-from .SimpleGraph import SimpleEdge
+from .SimpleGraph import SimpleGraph
 from .CompleteGraph import CompleteGraph
