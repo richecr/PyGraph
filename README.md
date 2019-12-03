@@ -1,5 +1,5 @@
-[![Open Source Helpers](https://www.codetriage.com/rickecr/pygraph/badges/users.svg)](https://www.codetriage.com/rickecr/pygraph)
 [![Build Status](https://travis-ci.org/Rickecr/PyGraph.svg?branch=master)](https://travis-ci.org/Rickecr/PyGraph)
+![PYPI](https://img.shields.io/pypi/v/PyGraphT)
 ![GitHub issues](https://img.shields.io/github/issues/Rickecr/PyGraph)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Rickecr/PyGraph)
 
