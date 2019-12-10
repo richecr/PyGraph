@@ -1,5 +1,5 @@
 ---
-name: Pull Request
+name: PR
 about: Abrir uma Pull Request
 title: PR
 labels: enhancement

@@ -9,8 +9,8 @@ g.add_vertex("c")
 
 g.add_edge("a", "b", name="1")
 g.add_edge("b", "c", name="2")
-g.add_edge("a", "a", name="3")
 
+print(g.is_vertices_adjacents("b", "a"))
 
 print(g.__str__())
 # g = Graph()
@@ -24,7 +24,7 @@ print(g.__str__())
 # g.add_edge("a", "a", name="d")
 
 # i = g.incidence_list()
-print(i)
+# print(i)
 print(g.__str__())
 '''
 graph = Graph()

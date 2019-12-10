@@ -1,5 +1,5 @@
 ---
-name: Feature
+name: FEATURE
 about: Sugira uma ideia para esse projeto
 title: Feature
 labels: enhancement
@@ -15,6 +15,3 @@ Aqui você descreve o porquê de sua feature é necessária.
 
 **Implementação:**
 Aqui você pode dar ideias de implementações para sua feature.
-
-**Imagens:**
-Para ajudar o entendimento de sua feature(opcional).

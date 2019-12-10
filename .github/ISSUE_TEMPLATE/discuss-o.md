@@ -1,5 +1,5 @@
 ---
-name: Discussão
+name: DISCUSSÃO
 about: Inicia uma discussão sobre um determinado assunto.
 title: Discussão
 labels: question

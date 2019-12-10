@@ -1,5 +1,5 @@
 ---
-name: Reportar um Bug
+name: BUG
 about: Crie um relatório para nos ajudar
 title: Bug
 labels: bug
@@ -18,6 +18,3 @@ Etapas para reproduzir o bug:
 
 **Comportamento esperado**
 Uma descrição clara e concisa do que você acha que deveria acontecer.
-
-**Imagens**
-Se aplicável, adicione capturas de tela para ajudar a explicar seu problema.
