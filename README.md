@@ -9,6 +9,10 @@
 
 - [PyGraphT - PYPI](https://pypi.org/project/PyGraphT/)
 
+## Como usar:
+
+- Você pode acessar a [documentação da API](https://rickecr.github.io/PyGraph/) e ver o funcionamento e alguns exemplos.
+
 ## Objetivo:
 > O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafos.
 
