@@ -8,7 +8,7 @@
 ## Instalar:
 
 ```bash
-pip3 install PyGraphT
+$ pip3 install PyGraphT
 ```
 
 ## Grafos:
