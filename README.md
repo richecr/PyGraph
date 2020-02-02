@@ -1,10 +1,9 @@
-[![Build Status](https://travis-ci.org/Rickecr/PyGraph.svg?branch=master)](https://travis-ci.org/Rickecr/PyGraph)
-![PYPI](https://img.shields.io/pypi/v/PyGraphT)
-![GitHub issues](https://img.shields.io/github/issues/Rickecr/PyGraph)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Rickecr/PyGraph)
-
+![PYPI](https://img.shields.io/pypi/v/PyGraphT?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/Rickecr/PyGraph?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Rickecr/PyGraph?style=for-the-badge)
 
 # [PyGraph](https://rickecr.github.io/PyGraph/)
+[![Build Status](https://travis-ci.org/Rickecr/PyGraph.svg?branch=master)](https://travis-ci.org/Rickecr/PyGraph)
 > Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
 
 - [PyGraphT - PYPI](https://pypi.org/project/PyGraphT/)
