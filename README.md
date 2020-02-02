@@ -1,4 +1,5 @@
 ![PYPI](https://img.shields.io/pypi/v/PyGraphT?style=for-the-badge)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/pygraph?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/Rickecr/PyGraph?style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Rickecr/PyGraph?style=for-the-badge)
 
