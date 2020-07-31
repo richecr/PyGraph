@@ -26,9 +26,9 @@ class TestSimpleGraph:
 
     def test_is_terminal(self):
         self.graph.add_vertex("a")
-        self.graph.add_edge("a", "b", "ab")
-        assert self.graph.edges[0].vertex_a.value == "a" or \
-            self.graph.edges[0].vertex_b.value == "b"
+        edge = self.graph.add_edge("a", "b", "ab")
+        assert self.graph.is_terminal(edge, 'a') and \
+            self.graph.is_terminal(edge, 'b')
 
     def test_vertex_exists(self):
         assert self.graph.vertex_exists("a")
