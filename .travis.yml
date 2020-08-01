@@ -4,10 +4,9 @@ python:
 
 before_install:
   - pip install poetry
-  - poetry shell
 # command to install dependencies
 install:
-  - poetry install
+  - poetry install -v
 # command to run tests
 script:
   - poetry run pycodestyle .
