@@ -69,19 +69,27 @@ O projeto se encontra na pasta `py_graph_t`, estamos aceitando dicas de nomes pa
 
 ### Como executar a aplicação:
 
-Nós usamos o pipenv para gerenciar os pacotes. Portanto, antes de tudo precisamos instalá-lo.
+Nós usamos o poetry para gerenciar os pacotes. Portanto, antes de tudo precisamos instalá-lo.
 
-- Instalar o pipenv:
+- Instalar o poetry:
 
-~~~bash
-$ pip install --user pipenv
-~~~
+    ~~~bash
+    $ pip install --user poetry
+    ~~~
+
+- Para entrar em um shell dentro do seu ambiente virtual:
+
+    ~~~bash
+    $ poetry shell
+    ~~~
 
 - Instalar as dependências usadas no projeto:
 
-~~~bash
-$ pipenv install
-~~~
+    ~~~bash
+    $ poetry install
+    ~~~
+
+Para mais detalhes do [poetry](https://python-poetry.org/docs/)
 
 **OBS:** Executar o comando acima dentro da pasta do projeto.
 
@@ -95,16 +103,22 @@ Muito bem. Agora só falta uma coisinha para abrir sua PR e ela ser aceita, **Te
 
 Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela comunidade Python e bastante fácil de usar.
 
-- Primeiro você precisa instalar o pipenv:
+- Primeiro você precisa instalar o poetry:
 
     ~~~bash
-    $ pip install --user pipenv
+    $ pip install --user poetry
     ~~~
-    
+
+- Para entrar em um shell dentro do seu ambiente virtual:
+
+    ~~~bash
+    $ poetry shell
+    ~~~
+
 - Para instalar as dependências usadas no projeto:
 
     ~~~bash
-    $ pipenv install
+    $ poetry install
     ~~~
 
 **OBS:** Os dois comandos acima só são necesśarios, caso ainda não tenha feito.
@@ -112,7 +126,7 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
 - Para testar se tudo funcionou bem, digite no terminal:
 
     ~~~bash
-    $ pipenv run pytest --version
+    $ poetry run pytest --version
     ~~~
 
 - Se a saída for a mesma que abaixo(podendo mudar a versão) esta tudo correto:
@@ -124,13 +138,13 @@ Para os testes nós optamos por usar o `pytest`, visto que é bem aceito pela co
 - Para execução da suite de testes basta executar:
    
     ~~~bash
-    $ pipenv run pytest
+    $ poetry run pytest
     ~~~
    
 - Para a execução dos testes no modo watch:
 
     ~~~bash
-    $ pipenv run ptw
+    $ poetry run ptw
     ~~~
   
 
@@ -148,18 +162,18 @@ Nós optamos por seguir o padrão da [PEP 8](https://www.python.org/dev/peps/pep
 
 #### Pycodestyle:
 
-Nós usamos o pipenv para gerenciar nossas dependências.
+Nós usamos o poetry para gerenciar nossas dependências.
 
 - Primeiro você precisa instalar o pipenv:
 
     ~~~bash
-    $ pip install --user pipenv
+    $ pip install --user poetry
     ~~~
     
 - Para instalar as dependências usadas no projeto:
 
     ~~~bash
-    $ pipenv install
+    $ poetry install
     ~~~
 
 **OBS:** Os dois comandos acima só são necesśarios, caso ainda não tenha feito.
@@ -167,7 +181,7 @@ Nós usamos o pipenv para gerenciar nossas dependências.
 - Para executar o pycodestyle:
     
     ~~~bash
-    pipenv run pycodestyle .
+    poetry run pycodestyle .
     ~~~
 
 ## Realizando uma Pull Request - PR

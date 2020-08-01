@@ -14,9 +14,9 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     packages=find_packages(),
-    url="https://github.com/Rickecr/PyGraph",
+    url="https://github.com/richecr/PyGraph",
     project_urls={
-        'Código fonte': 'https://github.com/Rickecr/PyGraph',
+        'Código fonte': 'https://github.com/richecr/PyGraph',
     },
     keywords='graph theory algorithms',
     license='MIT'
