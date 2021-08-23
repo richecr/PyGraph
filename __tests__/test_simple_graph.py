@@ -13,11 +13,13 @@ class TestSimpleGraph:
     def test_num_vertex(self):
         self.graph.add_vertex("a")
         assert self.graph.num_vertex() == 1
+        self.graph.delete_vertex("a")
 
     def test_add_vertex(self):
         value = "b"
         vertex = self.graph.add_vertex(value)
         assert str(vertex) == 'Vértice b'
+        self.graph.delete_vertex(value)
 
     def test_delete_vertex(self):
         vertex_delete = self.graph.delete_vertex("a")
