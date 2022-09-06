@@ -3,7 +3,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/richecr/PyGraph?style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/richecr/PyGraph?style=for-the-badge)
 
-# [PyGraph](https://richecr.github.io/PyGraph/)
+# [PyGraph](https://richramalho.github.io/PyGraph/)
 [![Build Status](https://travis-ci.org/richecr/PyGraph.svg?branch=master)](https://travis-ci.org/richecr/PyGraph)
 > Biblioteca com intuito de implementar os conceitos de Teoria dos Grafos.
 
@@ -11,7 +11,7 @@
 
 ## Como usar:
 
-- Você pode acessar a [documentação da API](https://richecr.github.io/PyGraph/) e ver o funcionamento e alguns exemplos.
+- Você pode acessar a [documentação da API](https://richramalho.github.io/PyGraph/) e ver o funcionamento e alguns exemplos.
 
 ## Objetivo:
 > O principal objetivo é implementar a maioria dos algoritmos de Teoria dos Grafos.
